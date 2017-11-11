@@ -2,7 +2,7 @@
   "name": "teamchiru_boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "test",
     "build": "webpack",
@@ -34,7 +34,6 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "http-server": "^0.10.0",
     "lodash": "^4.17.4"
   }
 }
