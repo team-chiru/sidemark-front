@@ -1,17 +1,25 @@
 const path = require('path')
+const webpack = require('webpack')
 
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const NamedModulesPlugin = webpack.NamedModulesPlugin
+const HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: './src/index.js'
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({ title: 'Sidemark Client' })
+    new HtmlWebpackPlugin({ title: 'Sidemark Client' }),
+    new NamedModulesPlugin(),
+    new HotModuleReplacementPlugin()
   ],
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot: true
   },
   output: {
     filename: 'bundle.js',
