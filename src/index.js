@@ -1,22 +1,21 @@
-import _ from 'lodash'
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import 'semantic-ui-button/button.min.css'
+import { Button } from 'semantic-ui-react'
 
 import './app.css'
-import printMe from './print.js'
 
-function component () {
-  let element = document.createElement('div')
-  let btn = document.createElement('button')
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  element.classList.add('hello')
-
-  btn.innerHTML = 'Click on me'
-  btn.onclick = printMe
-
-  element.appendChild(btn)
-
-  return element
+function tick () {
+  ReactDOM.render(
+    <div>
+      <h1>Hello world!</h1>
+      <Button primary>
+        {new Date().toLocaleTimeString()}
+      </Button>
+    </div>,
+    document.body
+  )
 }
 
-document.body.appendChild(component())
+setInterval(tick, 1000)
