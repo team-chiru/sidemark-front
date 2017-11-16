@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "EditorConfig.EditorConfig",
+        "chenxsan.vscode-standardjs",
+        "msjsdiag.debugger-for-chrome"
+    ]
+}
