@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug from Chrome",
+            "url": "http://localhost:8081/index.html",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "Launch from Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "file": "${workspaceRoot}/dist/index.html"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug from NodeJS",
+            "program": "${workspaceRoot}/src/app",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "chrome",
+            "name": "Attach on Chrome",
+            "request": "attach",
+            "port": 9222
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug Sidemark Frontend",
+            "configurations": [
+                "Debug JS from Chrome"
+            ]
+        }
+    ]
+}
