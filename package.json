@@ -57,6 +57,7 @@
     "semantic-ui-menu": "^2.2.12",
     "semantic-ui-react": "^0.76.0",
     "semantic-ui-segment": "^2.2.12",
-    "semantic-ui-sidebar": "^2.2.12"
+    "semantic-ui-sidebar": "^2.2.12",
+    "uuid": "^3.1.0"
   }
 }
