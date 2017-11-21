@@ -46,18 +46,21 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "antd": "^2.13.10",
+    "babel-polyfill": "^6.26.0",
+    "history": "^4.7.2",
+    "kea": "^0.27.3",
     "lodash": "^4.17.4",
-    "mobx": "^3.3.1",
-    "mobx-react": "^4.3.4",
+    "prop-types": "^15.6.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "semantic-ui-button": "^2.2.12",
-    "semantic-ui-icon": "^2.2.12",
-    "semantic-ui-list": "^2.2.12",
-    "semantic-ui-menu": "^2.2.12",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-undo": "^0.6.1",
+    "reselect": "^3.0.1",
     "semantic-ui-react": "^0.76.0",
-    "semantic-ui-segment": "^2.2.12",
-    "semantic-ui-sidebar": "^2.2.12",
     "uuid": "^3.1.0"
   }
 }
