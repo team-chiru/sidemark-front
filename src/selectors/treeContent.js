@@ -4,7 +4,7 @@ const getTreeContent = (state) => state.root
 
 export const canUndo = createSelector(
   [ getTreeContent ],
-  (treeRoot) => { return root.past.length > 0 }
+  (root) => { return root.past.length > 0 }
 )
 
 export const canRedo = createSelector(

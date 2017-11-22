@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Button } from 'antd'
 
 export class Undo extends React.Component {
   static propTypes = {
@@ -11,7 +12,7 @@ export class Undo extends React.Component {
     let { onUndo, canUndo } = this.props
 
     return (
-      <button onClick={onUndo} disabled={!canUndo}>Undo</button>
+      <Button type='default' onClick={onUndo} disabled={!canUndo}>Undo</Button>
     )
   }
 }
@@ -26,7 +27,7 @@ export class Redo extends React.Component {
     let { onRedo, canRedo } = this.props
 
     return (
-      <button onClick={onRedo} disabled={!canRedo}>Redo</button>
+      <Button type='default' onClick={onRedo} disabled={!canRedo}>Redo</Button>
     )
   }
 }
