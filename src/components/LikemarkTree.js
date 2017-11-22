@@ -18,9 +18,7 @@ export default class LikemarkTree extends React.Component {
     return (
       <ul>
         {root.map(mark =>
-          <LikemarkItem key={mark.id} {...mark}
-            onClick={() => onLikemarkClick(mark.id)}
-          />
+          <LikemarkItem key={mark.id} name={mark.name} onClick={() => onLikemarkClick(mark.id)} />
         )}
       </ul>
     )

@@ -4,15 +4,14 @@ import PropTypes from 'prop-types'
 export default class LikemarkItem extends React.Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired
   }
 
   render () {
-    let { onClick, text } = this.props
+    let { onClick, name } = this.props
 
     return (
-      <li onClick={onClick}>{text}</li>
+      <li onClick={onClick}>{name}</li>
     )
   }
 }

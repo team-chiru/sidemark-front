@@ -4,16 +4,18 @@ import { connect } from 'react-redux'
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 import { add } from '../actions/onLikemarkItems'
 
+import { canUndo, canRedo } from '../selectors/treeContent'
+
 import { Undo, Redo } from '../components/UndoRedo'
 import AddTextItem from '../components/AddTextItem'
 
 const UndoTreeControl = connect(
-  (state) => ({ canUndo: state.root.past.length > 0 }),
+  (state) => ({ canUndo: canUndo(state) > 0 }),
   { onUndo: UndoActionCreators.undo }
 )(Undo)
 
 const RedoTreeControl = connect(
-  (state) => ({ canRedo: state.root.future.length > 0 }),
+  (state) => ({ canRedo: canRedo(state) }),
   { onRedo: UndoActionCreators.redo }
 )(Redo)
 
@@ -24,11 +26,11 @@ const AddLikemarkControl = connect(
 
 const EditMenu = () => {
   return (
-    <span>
+    <div>
       <AddLikemarkControl />
       <UndoTreeControl />
       <RedoTreeControl />
-    </span>
+    </div>
   )
 }
 
