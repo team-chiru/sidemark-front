@@ -5,7 +5,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Debug from Chrome",
-            "url": "http://localhost:8081/index.html",
+            "url": "http://localhost:8080/index.html",
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}"
         },
