@@ -12,9 +12,7 @@ const PostCSSImportPlugin = require('postcss-import')
 const PostCSSNextPlugin = require('postcss-cssnext')
 
 module.exports = {
-  entry: {
-    app: './src/app.js'
-  },
+  entry: ['babel-polyfill', './src/index.js'],
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({

@@ -1,30 +1,20 @@
 import React from 'react'
-import * as UUIDv4 from 'uuid/v4'
-import { List } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import { Card } from 'antd'
 
-import 'semantic-ui-list/list.min.css'
-import 'semantic-ui-icon/icon.min.css'
-
-class LikemarkModel {
-  constructor (name, description) {
-    this.id = UUIDv4()
-    this.name = name || ''
-    this.description = description || ''
+export default class LikemarkItem extends React.Component {
+  static propTypes = {
+    onClick: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired
   }
-}
 
-class ItemView extends React.Component {
   render () {
+    let { onClick, name } = this.props
+
     return (
-      <List.Item key={this.props.model.id}>
-        <List.Icon name='bookmark' />
-        <List.Content>
-          <List.Header>{this.props.model.name}</List.Header>
-          <List.Description>{this.props.model.description}</List.Description>
-        </List.Content>
-      </List.Item>
+      <li>
+        <Card onClick={onClick}>{name}</Card>
+      </li>
     )
   }
 }
-
-export { LikemarkModel, ItemView as LikemarkItemView }

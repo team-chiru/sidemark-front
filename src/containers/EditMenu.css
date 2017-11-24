@@ -1,0 +1,7 @@
+#editMenu input {
+  width: 20%;
+}
+
+#editMenu > * {
+  margin-right: 10px;
+}
