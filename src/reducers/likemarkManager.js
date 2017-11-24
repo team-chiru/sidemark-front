@@ -36,6 +36,4 @@ const manageLikemarks = (state = [], action) => {
   }
 }
 
-const undoableManager = undoable(manageLikemarks)
-
-export default undoableManager
+export default undoable(manageLikemarks)

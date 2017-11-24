@@ -9,6 +9,8 @@ import { canUndo, canRedo } from '../selectors/treeContent'
 import { Undo, Redo } from '../components/UndoRedo'
 import AddTextItem from '../components/AddTextItem'
 
+import './EditMenu.css'
+
 const UndoTreeControl = connect(
   (state) => ({ canUndo: canUndo(state) > 0 }),
   { onUndo: UndoActionCreators.undo }
@@ -26,7 +28,7 @@ const AddLikemarkControl = connect(
 
 const EditMenu = () => {
   return (
-    <div>
+    <div id='editMenu'>
       <AddLikemarkControl />
       <UndoTreeControl />
       <RedoTreeControl />
