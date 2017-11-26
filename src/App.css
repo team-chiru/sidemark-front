@@ -14,15 +14,11 @@
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.ant-layout-header {
+  display: flex;
+  align-items: center;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#editMenu input {
+  width: 200px;
 }
