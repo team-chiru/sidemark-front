@@ -1,39 +1,63 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
-import { add } from '../actions/onLikemarkItems'
+import { addChild } from '../ducks/children'
 
-import { canUndo, canRedo } from '../selectors/treeContent'
+import { canUndo, canRedo } from '../selectors/children'
 
 import { Undo, Redo } from '../components/UndoRedo'
 import AddTextItem from '../components/AddTextItem'
 
 import './EditMenu.css'
 
-const UndoTreeControl = connect(
-  (state) => ({ canUndo: canUndo(state) > 0 }),
-  { onUndo: UndoActionCreators.undo }
-)(Undo)
+import PropsConnector from './PropsConnector'
 
-const RedoTreeControl = connect(
-  (state) => ({ canRedo: canRedo(state) }),
-  { onRedo: UndoActionCreators.redo }
-)(Redo)
+class UndoConnector extends PropsConnector {
+  get component () { return Undo }
 
-const AddLikemarkControl = connect(
-  (state) => ({ itemType: 'Likemark' }),
-  { onAddTextItem: add }
-)(AddTextItem)
+  get stateMapping () {
+    return (state) => ({ canUndo: canUndo(state) > 0 })
+  }
 
-const EditMenu = () => {
+  get dispatchMapping () {
+    return { onUndo: UndoActionCreators.undo }
+  }
+}
+
+class RedoConnector extends PropsConnector {
+  get component () { return Redo }
+
+  get stateMapping () {
+    return (state) => ({ canRedo: canRedo(state) })
+  }
+
+  get dispatchMapping () {
+    return { onRedo: UndoActionCreators.redo }
+  }
+}
+
+class AddChildConnector extends PropsConnector {
+  get component () { return AddTextItem }
+
+  get stateMapping () {
+    return (state) => ({ itemType: 'Likemark' })
+  }
+
+  get dispatchMapping () {
+    return { onAddTextItem: addChild }
+  }
+}
+
+export default () => {
+  let UndoControl = new UndoConnector()
+  let RedoControl = new RedoConnector()
+  let AddChildControl = new AddChildConnector()
+
   return (
     <div id='editMenu'>
-      <AddLikemarkControl />
-      <UndoTreeControl />
-      <RedoTreeControl />
+      <AddChildControl />
+      <UndoControl />
+      <RedoControl />
     </div>
   )
 }
-
-export default EditMenu

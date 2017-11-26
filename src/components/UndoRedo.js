@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { Button } from 'antd'
 
 export class Undo extends React.Component {
-  static propTypes = {
-    onUndo: PropTypes.func.isRequired,
-    canUndo: PropTypes.bool.isRequired
+  static get propTypes () {
+    return {
+      onUndo: PropTypes.func.isRequired,
+      canUndo: PropTypes.bool.isRequired
+    }
   }
 
   render () {
@@ -18,9 +20,11 @@ export class Undo extends React.Component {
 }
 
 export class Redo extends React.Component {
-  static propTypes = {
-    onRedo: PropTypes.func.isRequired,
-    canRedo: PropTypes.bool.isRequired
+  static get propTypes () {
+    return {
+      onRedo: PropTypes.func.isRequired,
+      canRedo: PropTypes.bool.isRequired
+    }
   }
 
   render () {

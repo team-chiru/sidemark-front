@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Card } from 'antd'
 
-export default class LikemarkItem extends React.Component {
-  static propTypes = {
-    onClick: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired
+export default class LikemarkChild extends React.Component {
+  static get propTypes () {
+    return {
+      onClick: PropTypes.func.isRequired,
+      name: PropTypes.string.isRequired
+    }
   }
 
   render () {

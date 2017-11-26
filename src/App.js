@@ -1,21 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducers'
+
+import mainReducer from './ducks/index'
 
 import { Layout } from 'antd'
 
 import EditMenu from './containers/EditMenu'
-import LikemarkTreeView from './containers/LikemarkTreeView'
+import LikemarkContainer from './containers/LikemarkContainer'
 
 import logo from './logo.svg'
 import './App.css'
 import 'antd/dist/antd.css'
 
-const store = createStore(reducer)
+const store = createStore(mainReducer)
 
-class App extends Component {
+export default class App extends React.Component {
   render () {
     return (
       <Provider className='App' store={store}>
@@ -25,12 +26,10 @@ class App extends Component {
             <EditMenu />
           </Layout.Header>
           <Layout.Content>
-            <LikemarkTreeView />
+            <LikemarkContainer />
           </Layout.Content>
         </Layout>
       </Provider>
     )
   }
 }
-
-export default App

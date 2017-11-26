@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { Input } from 'antd'
 
 export default class AddTextItem extends React.Component {
-  static propTypes = {
-    onAddTextItem: PropTypes.func.isRequired,
-    itemType: PropTypes.string.isRequired
+  static get propTypes () {
+    return {
+      onAddTextItem: PropTypes.func.isRequired,
+      itemType: PropTypes.string.isRequired
+    }
   }
 
   render () {
