@@ -48,16 +48,26 @@ class AddChildConnector extends PropsConnector {
   }
 }
 
-export default () => {
-  let UndoControl = new UndoConnector()
-  let RedoControl = new RedoConnector()
-  let AddChildControl = new AddChildConnector()
+export default class DebugConnector extends React.Component {
+  constructor (props) {
+    super(props)
 
-  return (
-    <div id='editMenu'>
-      <AddChildControl />
-      <UndoControl />
-      <RedoControl />
-    </div>
-  )
+    this._controls = {
+      UndoControl: new UndoConnector(),
+      RedoControl: new RedoConnector(),
+      AddChildControl: new AddChildConnector()
+    }
+  }
+
+  render () {
+    let { UndoControl, RedoControl, AddChildControl } = this._controls
+
+    return (
+      <div id='editMenu'>
+        <AddChildControl />
+        <UndoControl />
+        <RedoControl />
+      </div>
+    )
+  }
 }
