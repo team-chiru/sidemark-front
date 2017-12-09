@@ -10,7 +10,7 @@ import mainReducer from './ducks/index'
 
 import { Layout } from 'antd'
 
-import EditMenu from './containers/EditMenu'
+import DebugContainer from './containers/DebugContainer'
 import LikemarkContainer from './containers/LikemarkContainer'
 
 import { getFirstChildren } from './ducks/children'
@@ -40,7 +40,7 @@ export default class App extends React.Component {
         <Layout>
           <Layout.Header>
             <img src={logo} className='App-logo' alt='logo' />
-            <EditMenu />
+            <DebugContainer />
           </Layout.Header>
           <Layout.Content>
             <LikemarkContainer />

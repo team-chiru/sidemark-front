@@ -2,6 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'antd'
 
+/**
+ * Display a Button in order to undo undoable actions.
+ * @class
+ * @extends React.Component
+ * @property {function} onUndo - Function which undos the last action.
+ * @property {function} canUndo - Function which enables or disables this button.
+ */
 export class Undo extends React.Component {
   static get propTypes () {
     return {
@@ -19,6 +26,13 @@ export class Undo extends React.Component {
   }
 }
 
+/**
+ * Display a Button in order to redo redoable actions.
+ * @class
+ * @extends React.Component
+ * @property {function} onRedo - Function which redoes the last action.
+ * @property {function} canRedo - Function which enables or disables this button.
+ */
 export class Redo extends React.Component {
   static get propTypes () {
     return {

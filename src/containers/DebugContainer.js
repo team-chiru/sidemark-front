@@ -6,9 +6,9 @@ import { addChild } from '../ducks/children'
 import { canUndo, canRedo } from '../selectors/children'
 
 import { Undo, Redo } from '../components/UndoRedo'
-import AddTextItem from '../components/AddTextItem'
+import AddChild from '../components/AddChild'
 
-import './EditMenu.css'
+import './DebugContainer.css'
 
 import PropsConnector from './PropsConnector'
 
@@ -37,7 +37,7 @@ class RedoConnector extends PropsConnector {
 }
 
 class AddChildConnector extends PropsConnector {
-  get component () { return AddTextItem }
+  get component () { return AddChild }
 
   get stateMapping () {
     return (state) => ({ itemType: 'Likemark' })
@@ -48,7 +48,7 @@ class AddChildConnector extends PropsConnector {
   }
 }
 
-export default class DebugConnector extends React.Component {
+export default class DebugContainer extends React.Component {
   constructor (props) {
     super(props)
 
