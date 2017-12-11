@@ -4,10 +4,9 @@ import { Input } from 'antd'
 
 /**
  * Create a Child component by displaying a Text Input.
- * @class
- * @extends React.Component
- * @property {function} onAddChild - Updates the likemark children state.
- * @property {string} itemType - The type of the children to add.
+ * @class @extends React.Component
+ * @property {function} props.onAddChild - Updates the likemark children state.
+ * @property {string} props.itemType - The type of the children to add.
  * @fires AddChild#onAddChild
  */
 export default class AddChild extends React.Component {

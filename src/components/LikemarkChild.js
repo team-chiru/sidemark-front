@@ -4,10 +4,9 @@ import { Card } from 'antd'
 
 /**
  * Display a Likemark Child component.
- * @class
- * @extends React.Component
- * @property {function} onClick - Updates the likemark state.
- * @property {name} itemType - The name of the children.
+ * @class @extends React.Component
+ * @property {function} props.onClick - Updates the likemark state.
+ * @property {name} props.itemType - The name of the children.
  * @fires LikemarkChild#onClick
  */
 export default class LikemarkChild extends React.Component {

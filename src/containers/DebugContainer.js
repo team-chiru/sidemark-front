@@ -12,6 +12,10 @@ import './DebugContainer.css'
 
 import PropsConnector from './PropsConnector'
 
+/**
+ * Connect undo trigger with the undoable state.
+ * @class @extends PropsConnector
+ */
 class UndoConnector extends PropsConnector {
   get component () { return Undo }
 
@@ -24,6 +28,10 @@ class UndoConnector extends PropsConnector {
   }
 }
 
+/**
+ * Connect redo trigger with the redoable state.
+ * @class @extends PropsConnector
+ */
 class RedoConnector extends PropsConnector {
   get component () { return Redo }
 
@@ -36,6 +44,10 @@ class RedoConnector extends PropsConnector {
   }
 }
 
+/**
+ * Connect adder component with the likemark children state.
+ * @class @extends PropsConnector
+ */
 class AddChildConnector extends PropsConnector {
   get component () { return AddChild }
 
@@ -48,6 +60,10 @@ class AddChildConnector extends PropsConnector {
   }
 }
 
+/**
+ * Contain all connected debug components.
+ * @class @extends React.Component
+ */
 export default class DebugContainer extends React.Component {
   constructor (props) {
     super(props)

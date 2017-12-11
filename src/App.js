@@ -33,6 +33,10 @@ const store = createStore(
 
 store.dispatch(getFirstChildren(0))
 
+/**
+ * Display the webapp App.
+ * @class @extends React.Component
+ */
 export default class App extends React.Component {
   render () {
     return (
