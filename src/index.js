@@ -14,8 +14,7 @@ import Root from './root/root.component'
 import registerServiceWorker from './registerServiceWorker'
 
 // Assets
-import './App.css'
-import './index.css'
+import 'assets/styles/global.style.css'
 import 'antd/dist/antd.css'
 
 const client = axios.create({

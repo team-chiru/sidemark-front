@@ -7,7 +7,7 @@ import EditMenu from '../../containers/EditMenu'
 import LikemarkContainer from '../../containers/LikemarkContainer'
 
 // Assets
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 
 // Main Component
 const Home = (props) => (
