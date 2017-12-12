@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
-import { addChild } from '../ducks/children'
+import { addChild } from '../store/children'
 
-import { canUndo, canRedo } from '../selectors/children'
+import { canUndo, canRedo } from '../store/selectors/children'
 
 import { Undo, Redo } from '../components/UndoRedo'
 import AddTextItem from '../components/AddTextItem'

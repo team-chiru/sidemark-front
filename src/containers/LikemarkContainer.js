@@ -1,7 +1,7 @@
 import PropsConnector from './PropsConnector'
 import LikemarkChildren from '../components/LikemarkChildren'
 
-import { toggleChild } from '../ducks/children'
+import { toggleChild } from '../store/children'
 
 class LikemarkContainer extends PropsConnector {
   get component () { return LikemarkChildren }
