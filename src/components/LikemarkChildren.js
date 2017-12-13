@@ -3,6 +3,19 @@ import PropTypes from 'prop-types'
 
 import LikemarkChild from './LikemarkChild'
 
+/**
+ * A Likemark child referenced a likemark with minimal information.
+ * @typedef {object} LikemarkChildState
+ * @property {number} id - The unique id of the likemark child.
+ * @property {string} name - The name of the likemark child.
+ */
+
+/**
+ * Display the Likemark Children as a list component.
+ * @class @extends React.Component
+ * @property {LikemarkChildState[]} props.children - The likemark children to display.
+ * @property {function} props.onLikemarkClick - The function which trigger the state update when a likemark child is selected.
+ */
 export default class LikemarkChildren extends React.Component {
   static get propTypes () {
     return {

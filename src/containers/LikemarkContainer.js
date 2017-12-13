@@ -3,6 +3,10 @@ import LikemarkChildren from '../components/LikemarkChildren'
 
 import { toggleChild } from '../ducks/children'
 
+/**
+ * Connect the LikemarkChildren to the present state.
+ * @class @extends PropsConnector
+ */
 class LikemarkContainer extends PropsConnector {
   get component () { return LikemarkChildren }
 
