@@ -16,9 +16,10 @@ export class Likemark extends Component {
     this.props.getWithFirstChildren(this.props.likemark.id)
   }
 
-  handleLikemarkClick = (childId) => {
-    this.props.getWithFirstChildren(childId)
-    console.log('Current Child:', childId)
+  handleLikemarkClick = (likemarkId) => {
+    likemarkId
+      ? this.props.getWithFirstChildren(likemarkId)
+      : console.log('Already on Root')
   }
 
   render = () => <LikemarkUI likemark={this.props.likemark} handleLikemarkClick={this.handleLikemarkClick} />

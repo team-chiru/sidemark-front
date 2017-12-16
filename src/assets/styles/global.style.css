@@ -24,3 +24,7 @@ body {
   display: flex;
   align-items: center;
 }
+
+.invisible {
+  display: none;
+}
