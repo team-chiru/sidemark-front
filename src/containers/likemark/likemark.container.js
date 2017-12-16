@@ -1,21 +1,34 @@
-import {Component} from 'react'
+// Dependencies
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+// Components
+import LikemarkUI from 'components/likemark/likemark.component'
+
+// Action Creators
+import { getWithFirstChildren } from 'store/likemark'
+
+// Main Component
 export class Likemark extends Component {
-  render () {
-    return (
-      <div id='likemark'>
-        <h1>Likemark</h1>
-      </div>
-    )
+  componentWillMount () {
+    this.props.getWithFirstChildren(this.props.likemark.id)
   }
+
+  handleLikemarkClick = (childId) => {
+    this.props.getWithFirstChildren(childId)
+    console.log('Current Child:', childId)
+  }
+
+  render = () => <LikemarkUI likemark={this.props.likemark} handleLikemarkClick={this.handleLikemarkClick} />
 }
 
-Likemark.propTypes = {}
+Likemark.propTypes = {
+  getWithFirstChildren: PropTypes.func.isRequired
+}
 
 export default connect(
-  state => ({ children: state.children })//,
-  //dispatch => bindActionCreators({ change }, dispatch)
+  state => ({ likemark: state.likemark }),
+  dispatch => bindActionCreators({ getWithFirstChildren }, dispatch)
 )(Likemark)

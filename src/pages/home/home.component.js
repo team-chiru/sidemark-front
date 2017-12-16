@@ -1,26 +1,13 @@
 // Dependencies
 import React from 'react'
-import { Layout } from 'antd'
 
 // Components
-import DebugContainer from '../../containers/DebugContainer'
-import LikemarkContainer from '../../containers/LikemarkContainer'
-
-// Assets
-import logo from '../../assets/images/logo.svg'
+import Likemark from '../../containers/likemark/likemark.container'
 
 // Main Component
-const Home = (props) => (
+const Home = () => (
   <div id='home-page'>
-    <Layout>
-      <Layout.Header>
-        <img src={logo} className='app-logo' alt='logo' />
-        <DebugContainer />
-      </Layout.Header>
-      <Layout.Content>
-        <LikemarkContainer />
-      </Layout.Content>
-    </Layout>
+    <Likemark />
   </div>
 )
 
