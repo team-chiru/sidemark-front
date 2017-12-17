@@ -1,6 +1,9 @@
 // Dependencies
 import React from 'react'
 
+// Components
+import { Icon } from 'semantic-ui-react'
+
 // Assets
 import './likemark-header.scss'
 
@@ -13,12 +16,12 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null}) => (
     <div className='header-item'>
       <div className='header-btn-container'>
         { likemark.parentId !== 0 &&
-        <button
-          className={`${likemark.parentId ? 'back-btn' : 'invisible'}`}
-          onClick={() => handleLikemarkClick(likemark.parentId)}
-        >
-          Back
-        </button>
+          <Icon
+            name='arrow left'
+            size='big'
+            className={`${likemark.parentId ? 'back-btn' : 'invisible'}`}
+            onClick={() => handleLikemarkClick(likemark.parentId)}
+          />
         }
       </div>
       <h1> {likemark.name } </h1>
@@ -26,11 +29,11 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null}) => (
     <div className='header-item'>
       <div className='header-btn-container'>
         <a href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
-          <button
+          <Icon
+            name='arrow right'
+            size='big'
             onClick={() => console.log('go')}
-          >
-            Go
-          </button>
+          />
         </a>
       </div>
     </div>
