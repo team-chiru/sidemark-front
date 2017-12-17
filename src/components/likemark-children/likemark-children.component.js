@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import LikemarkChild from './LikemarkChild'
+import LikemarkChild from '../likemark-child/likemark-child.component'
 
 /**
  * A Likemark child referenced a likemark with minimal information.

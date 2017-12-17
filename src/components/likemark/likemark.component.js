@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components
-import LikemarkChildren from '../LikemarkChildren'
+import LikemarkChildren from '../likemark-children/likemark-children.component'
 
 // Assets
 import './likemark.scss'
