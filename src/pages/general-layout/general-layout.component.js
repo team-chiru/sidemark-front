@@ -23,7 +23,6 @@ const GeneralLayout = (props) => (
     <div className='current-page'>
       {props.children}
     </div>
-
   </div>
 )
 
