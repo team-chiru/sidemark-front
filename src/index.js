@@ -1,10 +1,18 @@
+// Dependencies
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './index.css'
-import App from './App'
-
+// Config
+import configureStore from 'store/configuration'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+// Root
+import Root from './root/root.component'
+
+// Assets
+import 'assets/styles/global.style.css'
+import 'antd/dist/antd.css'
+
+// Inserting the React App in the DOM
+ReactDOM.render(<Root store={configureStore()} />, document.getElementById('root'))
 registerServiceWorker()

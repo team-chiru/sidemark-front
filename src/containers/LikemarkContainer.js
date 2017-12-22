@@ -1,7 +1,7 @@
 import PropsConnector from './PropsConnector'
-import LikemarkChildren from '../components/LikemarkChildren'
+import LikemarkChildren from '../components/likemark-children/likemark-children.component'
 
-import { toggleChild } from '../ducks/children'
+import { toggleChild } from '../store/children'
 
 /**
  * Connect the LikemarkChildren to the present state.

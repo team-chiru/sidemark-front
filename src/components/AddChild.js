@@ -12,7 +12,7 @@ import { Input } from 'antd'
 export default class AddChild extends React.Component {
   static get propTypes () {
     return {
-      onAddChild: PropTypes.func.isRequired,
+      onAddChild: PropTypes.func,
       itemType: PropTypes.string.isRequired
     }
   }

@@ -1,0 +1,22 @@
+.likemark-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.header-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+button {
+  cursor: pointer;
+}
