@@ -16,9 +16,9 @@ const GET_WITH_FIRST_CHILDREN_FAILURE = 'likemark/children/GET_WITH_FIRST_CHILDR
  * @readonly @const {object}
  */
 const initialState = {
-  id: 1,
+  id: 0,
   name: 'Root',
-  url: 'http://www.likemark.io/',
+  url: 'http://likemark.io/',
   children: []
 }
 

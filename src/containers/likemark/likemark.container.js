@@ -17,7 +17,7 @@ export class Likemark extends Component {
   }
 
   handleLikemarkClick = (likemarkId) => {
-    likemarkId
+    likemarkId !== -1
       ? this.props.getWithFirstChildren(likemarkId)
       : console.log('Already on Root')
   }

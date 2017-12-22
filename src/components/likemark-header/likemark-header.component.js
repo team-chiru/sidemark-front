@@ -15,7 +15,7 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null}) => (
   <div className='likemark-header'>
     <div className='header-item'>
       <div className='header-btn-container'>
-        { likemark.parentId !== 0 &&
+        { likemark.parentId !== -1 &&
           <Icon
             name='arrow left'
             size='big'
@@ -24,7 +24,7 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null}) => (
           />
         }
       </div>
-      <h1> {likemark.name } </h1>
+      <h1> { likemark.id ? likemark.name : 'Root' } </h1>
     </div>
     <div className='header-item'>
       <div className='header-btn-container'>
