@@ -12,9 +12,18 @@ import { getWithFirstChildren } from 'store/likemark'
 
 // Main Component
 export class Likemark extends Component {
-  componentWillMount () {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuVisibility: false
+    }
+  }
+
+  componentWillMount = () => {
     this.props.getWithFirstChildren(this.props.likemark.id)
   }
+
+  toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
 
   handleLikemarkClick = (likemarkId) => {
     likemarkId !== -1
@@ -22,7 +31,15 @@ export class Likemark extends Component {
       : console.log('Already on Root')
   }
 
-  render = () => <LikemarkUI likemark={this.props.likemark} handleLikemarkClick={this.handleLikemarkClick} />
+  render = () => (
+    <LikemarkUI
+      likemark={this.props.likemark}
+      menuVisibility={this.state.menuVisibility}
+      handleLikemarkClick={this.handleLikemarkClick}
+      toggleMenuVisibility={this.toggleMenuVisibility}
+      setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
+    />
+  )
 }
 
 Likemark.propTypes = {

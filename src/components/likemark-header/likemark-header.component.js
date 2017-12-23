@@ -11,7 +11,7 @@ import './likemark-header.scss'
 const checkPrefix = (url) => url.match(/http:\/\//g) || url.match(/https:\/\//g)
 
 // Main Component
-const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null}) => (
+const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null, toggleMenuVisibility = null}) => (
   <div className='likemark-header'>
     <div className='header-item'>
       <div className='header-btn-container'>
@@ -28,12 +28,11 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null}) => (
     </div>
     <div className='header-item'>
       <div className='header-btn-container'>
-        <a href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
-          <Icon
-            name='arrow right'
-            size='big'
-            onClick={() => console.log('go')}
-          />
+        <Icon name='ellipsis vertical' size='large' onClick={toggleMenuVisibility} />
+      </div>
+      <div className='header-btn-container likemark-link-btn'>
+        <a target='_blank' href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
+          <Icon name='arrow right' size='big'color='orange' />
         </a>
       </div>
     </div>
