@@ -156,37 +156,33 @@ module.exports = {
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
+          { test: /\.css$/, use: ['style-loader', 'css-loader'] },
           {
-            test: /(\.css$|\.scss$|\.sass$)$/,
+            test: /(\.scss|\.sass)$/,
+            exclude: /node_modules/,
             use: [
-              require.resolve('style-loader'),
+              'style-loader',
               {
-                loader: require.resolve('css-loader'),
+                loader: 'css-loader',
                 options: {
-                  importLoaders: 1,
-                },
-              },
-              {
-                loader: require.resolve('postcss-loader'),
+                  sourceMap: true
+                }
+              }, {
+                loader: 'postcss-loader',
                 options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
                   plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009',
-                    }),
+                    require('autoprefixer')
                   ],
-                },
-              },
-            ],
+                  sourceMap: true
+                }
+              }, {
+                loader: 'sass-loader',
+                options: {
+                  includePaths: [path.resolve(paths.appSrc, 'src', 'scss')],
+                  sourceMap: true
+                }
+              }
+            ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.

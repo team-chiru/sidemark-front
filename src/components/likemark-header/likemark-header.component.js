@@ -32,7 +32,7 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null, toggleMenuVi
       </div>
       <div className='header-btn-container likemark-link-btn'>
         <a target='_blank' href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
-          <Icon name='arrow right' size='big'color='orange' />
+          <Icon name='arrow right' size='big' />
         </a>
       </div>
     </div>

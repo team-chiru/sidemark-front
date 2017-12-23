@@ -19,4 +19,11 @@
 
 .likemark-link-btn {
   background-color: #00a2ae;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+
 }
