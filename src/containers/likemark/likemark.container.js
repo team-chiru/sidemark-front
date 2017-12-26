@@ -1,6 +1,7 @@
+// @flow
+
 // Dependencies
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -11,39 +12,48 @@ import LikemarkUI from 'components/likemark/likemark.component'
 import { getWithFirstChildren } from 'store/likemark'
 
 // Main Component
-export class Likemark extends Component {
-  constructor(props) {
-    super(props);
+type Props = {
+  getWithFirstChildren: (likemarkId: number) => Object,
+  likemark: Object,
+};
+
+type State = {
+  menuVisibility: boolean,
+};
+
+export class Likemark extends Component<Props, State> {
+  constructor (props: Props, context: any) {
+    super(props, context)
     this.state = {
       menuVisibility: false
     }
   }
 
-  componentWillMount = () => {
+  componentWillMount () {
     this.props.getWithFirstChildren(this.props.likemark.id)
   }
 
-  toggleMenuVisibility = () => this.setState({ menuVisibility: !this.state.menuVisibility })
+  toggleMenuVisibility () {
+    this.setState({ menuVisibility: !this.state.menuVisibility })
+  }
 
-  handleLikemarkClick = (likemarkId) => {
+  handleLikemarkClick (likemarkId: number): void {
     likemarkId !== -1
       ? this.props.getWithFirstChildren(likemarkId)
       : console.log('Already on Root')
   }
 
-  render = () => (
-    <LikemarkUI
-      likemark={this.props.likemark}
-      menuVisibility={this.state.menuVisibility}
-      handleLikemarkClick={this.handleLikemarkClick}
-      toggleMenuVisibility={this.toggleMenuVisibility}
-      setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
-    />
-  )
-}
-
-Likemark.propTypes = {
-  getWithFirstChildren: PropTypes.func.isRequired
+  render () {
+    return (
+      <LikemarkUI
+        likemark={this.props.likemark}
+        menuVisibility={this.state.menuVisibility}
+        handleLikemarkClick={this.handleLikemarkClick.bind(this)}
+        toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
+        setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
+      />
+    )
+  }
 }
 
 export default connect(
