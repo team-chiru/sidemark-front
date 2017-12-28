@@ -1,7 +1,7 @@
 // @flow
 
 // Dependencies
-import React, {Component} from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -24,11 +24,11 @@ type Props = {
 };
 
 type State = {
-  menuVisibility: boolean,
+  menuVisibility: boolean
 };
 
 // Main Component
-export class Likemark extends Component<Props, State> {
+export class Likemark extends React.Component<Props, State> {
   constructor (props: Props, context: any) {
     super(props, context)
     this.state = {
@@ -36,11 +36,11 @@ export class Likemark extends Component<Props, State> {
     }
   }
 
-  componentWillMount () {
+  componentWillMount (): void {
     this.props.getWithFirstChildren(this.props.likemark.id)
   }
 
-  toggleMenuVisibility () {
+  toggleMenuVisibility (): void {
     this.setState({ menuVisibility: !this.state.menuVisibility })
   }
 
