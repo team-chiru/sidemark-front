@@ -20,7 +20,7 @@ import { getWithFirstChildren } from 'store/likemark'
 */
 type Props = {
   getWithFirstChildren: (likemarkId: number) => Object,
-  likemark: Object,
+  likemark: Object
 };
 
 type State = {
