@@ -1,11 +1,17 @@
+/* @flow */
+
 // Dependencies
-import React from 'react'
+import * as React from 'react'
 
 // Assets
 import './general-layout.scss'
 
 // Main Component
-const GeneralLayout = (props) => (
+type Props = {
+  children?: React.Node,
+}
+
+const GeneralLayout = (props: Props) => (
   <div className='general-layout'>
     {props.children}
   </div>

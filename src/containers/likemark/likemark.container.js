@@ -1,4 +1,10 @@
-// @flow
+/* @flow */
+/*
+  Flow and Standard JS - 'no-undef' for global flow types issues:
+  - https://github.com/eslint/eslint/issues/4741
+  - https://github.com/babel/babel-eslint#known-issues
+  - https://standardjs.com/#i-use-a-library-that-pollutes-the-global-namespace-how-do-i-prevent-variable-is-not-defined-errors
+*/
 
 // Dependencies
 import * as React from 'react'
@@ -11,23 +17,16 @@ import LikemarkUI from 'components/likemark/likemark.component'
 // Action Creators
 import { getWithFirstChildren } from 'store/likemark'
 
-// Types
-/*
-  Flow and Standard JS - 'no-undef' for global flow types issues:
-  - https://github.com/eslint/eslint/issues/4741
-  - https://github.com/babel/babel-eslint#known-issues
-  - https://standardjs.com/#i-use-a-library-that-pollutes-the-global-namespace-how-do-i-prevent-variable-is-not-defined-errors
-*/
+// Main Component
 type Props = {
   getWithFirstChildren: (likemarkId: number) => Object,
-  likemark: Object
-};
+  likemark: Object,
+}
 
 type State = {
   menuVisibility: boolean
-};
+}
 
-// Main Component
 export class Likemark extends React.Component<Props, State> {
   constructor (props: Props, context: any) {
     super(props, context)

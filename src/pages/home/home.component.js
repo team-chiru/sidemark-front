@@ -1,8 +1,10 @@
+/* @flow */
+
 // Dependencies
 import React from 'react'
 
 // Components
-import Likemark from '../../containers/likemark/likemark.container'
+import Likemark from 'containers/likemark/likemark.container'
 
 // Assets
 import './home.scss'

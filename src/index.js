@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom'
 
 // Config
 import configureStore from 'store/configuration'
-import registerServiceWorker from './registerServiceWorker'
+import registerServiceWorker from 'registerServiceWorker'
 
 // Root
-import Root from './root/root.component'
+import Root from 'root/root.component'
 
 // Assets
 import 'assets/styles/global.style.css'
