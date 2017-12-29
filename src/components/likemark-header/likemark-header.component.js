@@ -1,3 +1,5 @@
+/* @flow */
+
 // Dependencies
 import React from 'react'
 
@@ -8,32 +10,38 @@ import { Icon } from 'semantic-ui-react'
 import './likemark-header.scss'
 
 // Helpers
-const checkPrefix = (url) => url.match(/http:\/\//g) || url.match(/https:\/\//g)
+const checkPrefix = (url: string) => url.match(/http:\/\//g) || url.match(/https:\/\//g)
 
 // Main Component
-const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null, toggleMenuVisibility = null}) => (
+type Props = {
+  likemark: Object,
+  handleLikemarkClick: Function,
+  toggleMenuVisibility: Function
+}
+
+const LikemarkHeader = ({likemark = {}, handleLikemarkClick, toggleMenuVisibility}: Props) => (
   <div className='likemark-header'>
     <div className='header-item'>
       <div className='header-btn-container'>
-        { likemark.parentId !== -1 &&
+        { likemark && likemark.parentId !== -1 &&
           <Icon
             name='arrow left'
-            size='big'
+            size='large'
             className={`${likemark.parentId ? 'back-btn' : 'invisible'}`}
             onClick={() => handleLikemarkClick(likemark.parentId)}
           />
         }
       </div>
-      <h1> { likemark.id ? likemark.name : 'Root' } </h1>
+      <h2> { likemark.id ? likemark.name : 'Root' } </h2>
     </div>
     <div className='header-item'>
       <div className='header-btn-container'>
-        <Icon name='bars' size='large' onClick={toggleMenuVisibility} />
-      </div>
-      <div className='header-btn-container likemark-link-btn'>
         <a target='_blank' href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
-          <Icon name='arrow right' size='big' />
+          <Icon name='share' size='large' />
         </a>
+      </div>
+      <div className='header-btn-container'>
+        <Icon name='bars' size='large' onClick={toggleMenuVisibility} />
       </div>
     </div>
   </div>

@@ -17,12 +17,12 @@
   min-width: 40px;
 }
 
-.likemark-link-btn {
-  background-color: #00a2ae;
-  a {
-    color: white;
+.header-btn-container {
+  a, i {
+    color: inherit;
     &:hover {
-      color: white;
+      color: inherit;
+      cursor: pointer;
     }
   }
 

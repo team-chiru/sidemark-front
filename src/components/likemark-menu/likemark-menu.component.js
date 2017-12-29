@@ -1,12 +1,19 @@
+/* @flow */
+
 // Dependencies
-import React from 'react'
+import * as React from 'react'
 import { Sidebar, Segment, Menu, Icon } from 'semantic-ui-react'
 
 // Assets
 import './likemark-menu.scss'
 
 // Main Component
-const LikemarkMenu = ({children, menuVisibility}) => {
+type Props = {
+  children?: React.Node,
+  menuVisibility: boolean
+}
+
+const LikemarkMenu = ({children, menuVisibility}: Props) => {
   return (
     <Sidebar.Pushable as={Segment}>
       <Sidebar as={Menu} animation='push' direction='top' visible={menuVisibility} inverted>

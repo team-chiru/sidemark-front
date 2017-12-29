@@ -8,7 +8,7 @@ import './general-layout.scss'
 
 // Main Component
 type Props = {
-  children?: React.Node,
+  children?: React.Node
 }
 
 const GeneralLayout = ({children}: Props) => (
