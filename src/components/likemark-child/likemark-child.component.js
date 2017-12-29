@@ -35,9 +35,9 @@ export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetails
         onClick={toggleDetailsVisibilty}
       />
       <List.Content>
-        <div className='likemark-child-content' onClick={handleLikemarkClick}>
+        <div className='likemark-child-content likemark-child-menu' onClick={handleLikemarkClick}>
           <div className='likemark-child-header'>
-            <Image avatar src='https://react.semantic-ui.com/assets/images/avatar/small/daniel.jpg' />
+            <Image avatar src={'https://www.google.com/s2/favicons?domain=' + likemarkChild.url} />
             <h3 className='header'>{likemarkChild.name}</h3>
           </div>
           <SmoothCollapse expanded={expandedDetails}>

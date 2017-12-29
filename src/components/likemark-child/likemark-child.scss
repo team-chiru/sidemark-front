@@ -1,5 +1,6 @@
 .likemark-child {
   display: flex !important;
+  min-height: 45px;
 
   .content {
     flex: 2;
@@ -25,7 +26,11 @@
     .likemark-child-header {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start
+      justify-content: flex-start;
+
+      h3 {
+        font-size: 21px
+      }
     }
   }
 
