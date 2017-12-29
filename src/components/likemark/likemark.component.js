@@ -22,8 +22,8 @@ type Props = {
 
 const Likemark = ({likemark, menuVisibility, handleLikemarkClick, toggleMenuVisibility, setMenuVisibility}: Props) => (
   <div className='likemark'>
-    <LikemarkHeader {...{likemark, handleLikemarkClick, toggleMenuVisibility}} />
     <LikemarkMenu {...{menuVisibility}}>
+      <LikemarkHeader {...{likemark, handleLikemarkClick, toggleMenuVisibility}} />
       <LikemarkChildren {...{likemarkChildren: likemark.children, handleLikemarkClick}} />
     </LikemarkMenu>
   </div>

@@ -19,7 +19,7 @@ type Props = {
 
 export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props) => {
   return (
-    <ul>
+    <div className='ui celled list'>
       {
         likemarkChildren.map(likemarkChild =>
           <LikemarkChild {...{
@@ -30,7 +30,7 @@ export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props)
           />
         )
       }
-    </ul>
+    </div>
   )
 }
 

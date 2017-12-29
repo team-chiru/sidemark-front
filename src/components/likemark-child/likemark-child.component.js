@@ -4,6 +4,9 @@
 import React from 'react'
 import SmoothCollapse from 'react-smooth-collapse'
 
+// Assets
+import './likemark-child.scss'
+
 // Main component
 /**
  * Display a Likemark Child component.
@@ -21,18 +24,27 @@ type Props = {
 
 export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetailsVisibilty, expandedDetails}: Props) => {
   return (
-    <li className='likemark-child'>
-      <div className='likemark-child-header' style={{display: 'flex'}}>
-        <button onClick={toggleDetailsVisibilty}>toggle</button>
-        <div onClick={handleLikemarkClick}>{likemarkChild.name}</div>
+    <div className='likemark-child item'>
+      <div>
+        <i className={`likemark-child-icon angle icon large ${expandedDetails ? 'up' : 'down'}`} onClick={toggleDetailsVisibilty} />
       </div>
-      <SmoothCollapse expanded={expandedDetails}>
-        <div className='likemark-child-details' style={{marginLeft: '15px'}}>
-          <p>ID: {likemarkChild.id}</p>
-          <p>URL: {likemarkChild.url}</p>
+      <div className='content'>
+        <div className='likemark-child-content' onClick={handleLikemarkClick}>
+          <div className='likemark-child-header'>
+            <h3 className='header'>{likemarkChild.name}</h3>
+          </div>
+          <SmoothCollapse expanded={expandedDetails}>
+            <div className='likemark-child-details'>
+              <p>ID: {likemarkChild.id}</p>
+              <p>URL: {likemarkChild.url}</p>
+            </div>
+          </SmoothCollapse>
         </div>
-      </SmoothCollapse>
-    </li>
+        <div className='likemark-child-menu'>
+          <i className={`likemark-child-icon angle icon large ellipsis vertical`} onClick={() => console.log(likemarkChild.name + ' options')} />
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -28,7 +28,7 @@ const LikemarkHeader = ({likemark = {}, handleLikemarkClick = null, toggleMenuVi
     </div>
     <div className='header-item'>
       <div className='header-btn-container'>
-        <Icon name='ellipsis vertical' size='large' onClick={toggleMenuVisibility} />
+        <Icon name='bars' size='large' onClick={toggleMenuVisibility} />
       </div>
       <div className='header-btn-container likemark-link-btn'>
         <a target='_blank' href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>

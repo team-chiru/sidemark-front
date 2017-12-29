@@ -1,0 +1,31 @@
+.likemark-child {
+  display: flex !important;
+  padding: 0 !important;
+
+  .content {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-content: center
+  }
+
+  .likemark-child-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .likemark-child-content {
+    flex: 2;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .likemark-child-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center
+  }
+}

@@ -9,9 +9,9 @@ import './likemark-menu.scss'
 const LikemarkMenu = ({children, menuVisibility}) => {
   return (
     <Sidebar.Pushable as={Segment}>
-      <Sidebar as={Menu} animation='scale down' direction='top' size='tiny' visible={menuVisibility} icon='labeled' inverted>
-        <Menu.Item name='home' size='mini'>
-          <Icon name='home' size='mini' />
+      <Sidebar as={Menu} animation='push' direction='top' visible={menuVisibility} inverted>
+        <Menu.Item name='home'>
+          <Icon name='home' />
           Home
         </Menu.Item>
         <Menu.Item name='add'>
