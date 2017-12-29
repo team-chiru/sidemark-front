@@ -4,6 +4,7 @@
 import * as React from 'react'
 
 // Components
+import { List } from 'semantic-ui-react'
 import LikemarkChild from 'containers/likemark-child/likemark-child.container'
 
 // Assets
@@ -24,17 +25,18 @@ type Props = {
 export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props) => {
   return (
     <div id='likemark-children-wrapper'>
-      <div id='likemark-children' className='ui celled list'>
-        {
-          likemarkChildren.map(likemarkChild =>
-            <LikemarkChild {...{
-              key: likemarkChild.id,
-              likemarkChild,
-              handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
-            }}
-            />
-          )
-        }
+      <div id='likemark-children'>
+        <List celled >
+          {
+            likemarkChildren.map(likemarkChild =>
+              <LikemarkChild {...{
+                key: likemarkChild.id,
+                likemarkChild,
+                handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
+              }} />
+            )
+          }
+        </List>
       </div>
     </div>
   )

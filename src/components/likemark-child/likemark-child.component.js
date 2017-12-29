@@ -2,6 +2,9 @@
 
 // Dependencies
 import React from 'react'
+
+// Components
+import { List, Icon, Image } from 'semantic-ui-react'
 import SmoothCollapse from 'react-smooth-collapse'
 
 // Assets
@@ -24,13 +27,17 @@ type Props = {
 
 export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetailsVisibilty, expandedDetails}: Props) => {
   return (
-    <div className='likemark-child item'>
-      <div>
-        <i className={`likemark-child-icon angle icon large ${expandedDetails ? 'up' : 'down'}`} onClick={toggleDetailsVisibilty} />
-      </div>
-      <div className='content'>
+    <List.Item className='likemark-child'>
+      <Icon
+        name={`angle ${expandedDetails ? 'up' : 'down'}`}
+        size='large'
+        className='likemark-child-icon'
+        onClick={toggleDetailsVisibilty}
+      />
+      <List.Content>
         <div className='likemark-child-content' onClick={handleLikemarkClick}>
           <div className='likemark-child-header'>
+            <Image avatar src='https://react.semantic-ui.com/assets/images/avatar/small/daniel.jpg' />
             <h3 className='header'>{likemarkChild.name}</h3>
           </div>
           <SmoothCollapse expanded={expandedDetails}>
@@ -41,10 +48,15 @@ export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetails
           </SmoothCollapse>
         </div>
         <div className='likemark-child-menu'>
-          <i className={`likemark-child-icon angle icon large ellipsis vertical`} onClick={() => console.log(likemarkChild.name + ' options')} />
+          <Icon
+            name='ellipsis vertical'
+            size='large'
+            className='likemark-child-icon'
+            onClick={() => console.log(likemarkChild.name + ' options')}
+          />
         </div>
-      </div>
-    </div>
+      </List.Content>
+    </List.Item>
   )
 }
 

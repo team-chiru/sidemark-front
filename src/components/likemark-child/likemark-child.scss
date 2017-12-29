@@ -1,8 +1,8 @@
 .likemark-child {
   display: flex !important;
-  padding: 0 !important;
 
   .content {
+    flex: 2;
     width: 100%;
     display: flex !important;
     justify-content: space-between;
@@ -17,8 +17,15 @@
 
   .likemark-child-content {
     flex: 2;
+    width: 100%;
     &:hover {
       cursor: pointer;
+    }
+
+    .likemark-child-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start
     }
   }
 
