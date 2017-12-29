@@ -1,3 +1,5 @@
+/* @flow */
+
 // Dependencies
 import axios from 'axios'
 
@@ -12,23 +14,38 @@ const GET_WITH_FIRST_CHILDREN_SUCCESS = 'likemark/children/GET_WITH_FIRST_CHILDR
 const GET_WITH_FIRST_CHILDREN_FAILURE = 'likemark/children/GET_WITH_FIRST_CHILDREN_FAIL'
 
 /**
- * Application's initial state.
+ * Likemark piece of state's initial values.
  * @readonly @const {object}
  */
 const initialState = {
   id: 0,
   name: 'Root',
   url: 'http://likemark.io/',
+  parentId: -1,
   children: []
 }
 
 /**
  * Reducer which manage the current likemark.
- * @param {object{}} state - The likemark state.
- * @param {object{}} action - The triggered action.
+ * @param {State{}} state - The likemark state.
+ * @param {Action{}} action - The triggered action.
  */
 
-export default (state = initialState, action) => {
+type State = {
+  id: number,
+  name: string,
+  url: string,
+  parentId: number,
+  children: Array<Object>
+}
+
+type Action = {
+  type: string,
+  payload: ?Object,
+  error: ?Object
+}
+
+export default (state: State = initialState, action: Action) => {
   switch (action.type) {
     case GET_WITH_FIRST_CHILDREN_SUCCESS:
       console.log('Current likemark:', action.payload)
@@ -48,21 +65,19 @@ export default (state = initialState, action) => {
  * Create the GET_WITH_FIRST_CHILDREN actions.
  * @param {string} id - The id of the likemark to be shown.
  * @returns {object} The GET_WITH_FIRST_CHILDREN action which is a GET request for a likemark.
- *
- *
  */
-export const getWithFirstChildren = (id) => {
+export const getWithFirstChildren = (id: number) => {
   const request = axios.get(baseUrl + id)
 
-  return dispatch => {
+  return (dispatch: Function) => {
     request
       .then(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_SUCCESS,
         payload: res.data.message
       }))
-      .catch(err => dispatch({
+      .catch(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_FAILURE,
-        payload: err
+        error: res
       }))
   }
 }

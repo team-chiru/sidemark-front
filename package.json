@@ -127,7 +127,8 @@
     ],
     "globals": [
       "Props",
-      "State"
+      "State",
+      "Action"
     ]
   }
 }
