@@ -6,6 +6,7 @@ import * as React from 'react'
 // Components
 import LikemarkChildUI from 'components/likemark-child/likemark-child.component'
 
+// Main Component
 /**
  * Display a Likemark Child component.
  * @property {Function} props.handleLikemarkClick - Updates the likemark state.

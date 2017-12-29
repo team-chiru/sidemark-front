@@ -11,9 +11,9 @@ type Props = {
   children?: React.Node,
 }
 
-const GeneralLayout = (props: Props) => (
+const GeneralLayout = ({children}: Props) => (
   <div className='general-layout'>
-    {props.children}
+    {children}
   </div>
 )
 
