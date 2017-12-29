@@ -3,7 +3,11 @@
 // Dependencies
 import * as React from 'react'
 
+// Components
 import LikemarkChild from 'containers/likemark-child/likemark-child.container'
+
+// Assets
+import './likemark-children.scss'
 
 // Main Component
 /**
@@ -19,17 +23,19 @@ type Props = {
 
 export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props) => {
   return (
-    <div className='ui celled list'>
-      {
-        likemarkChildren.map(likemarkChild =>
-          <LikemarkChild {...{
-            key: likemarkChild.id,
-            likemarkChild,
-            handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
-          }}
-          />
-        )
-      }
+    <div id='likemark-children-wrapper'>
+      <div id='likemark-children' className='ui celled list'>
+        {
+          likemarkChildren.map(likemarkChild =>
+            <LikemarkChild {...{
+              key: likemarkChild.id,
+              likemarkChild,
+              handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
+            }}
+            />
+          )
+        }
+      </div>
     </div>
   )
 }

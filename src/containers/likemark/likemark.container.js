@@ -31,7 +31,7 @@ export class Likemark extends React.Component<Props, State> {
   constructor (props: Props, context: any) {
     super(props, context)
     this.state = {
-      menuVisibility: false
+      menuVisibility: true
     }
   }
 

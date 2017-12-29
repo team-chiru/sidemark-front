@@ -1,0 +1,15 @@
+#likemark-children-wrapper {
+  overflow: hidden;
+  ::-webkit-scrollbar {   // Chrome, Safari, Opera, Android, iOS
+    width: 0px;
+    background: transparent;
+  }
+}
+
+#likemark-children {
+  margin-top: 15px;
+  max-height: 85vh;
+  overflow-y: scroll;
+  width: 100%;
+  flex: 2
+}

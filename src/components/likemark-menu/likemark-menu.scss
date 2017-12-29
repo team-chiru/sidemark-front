@@ -1,12 +1,14 @@
-.pusher {
-  border: none;
-}
-.ui.inverted.menu {
-  background-color: #00a2ae;
-}
-
 .ui.segment {
   border: none 0;
   border-radius: 0;
   margin: 0;
+  overflow: hidden;
+
+  .pusher {
+    border: none;
+    //overflow-y: scroll;
+  }
+  .ui.inverted.menu {
+    background-color: #00a2ae;
+  }
 }
