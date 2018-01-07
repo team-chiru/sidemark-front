@@ -7,13 +7,13 @@ import * as React from 'react'
 import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
-import { Icon } from 'semantic-ui-react'
+import {Icon} from 'semantic-ui-react'
+
+// Services
+import {utils} from 'services'
 
 // Assets
 import './likemark-header.scss'
-
-// Helpers
-const checkPrefix = (url: string) => url.match(/http:\/\//g) || url.match(/https:\/\//g)
 
 // Main Component
 /**
@@ -46,7 +46,7 @@ const LikemarkHeader = ({likemark, handleLikemarkClick, toggleMenuVisibility}: P
     </div>
     <div className='header-item'>
       <div className='header-btn-container'>
-        <a target='_blank' href={`${checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
+        <a target='_blank' href={`${utils.checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
           <Icon name='share' size='large' />
         </a>
       </div>

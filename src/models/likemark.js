@@ -1,4 +1,4 @@
-// @flow
+/* @flow */
 
 export type Likemark = {
   id: number,

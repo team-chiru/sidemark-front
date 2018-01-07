@@ -10,6 +10,9 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 import { List, Icon, Image } from 'semantic-ui-react'
 import SmoothCollapse from 'react-smooth-collapse'
 
+// Services
+import {utils} from 'services'
+
 // Assets
 import './likemark-child.scss'
 
@@ -41,7 +44,7 @@ export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetails
       <List.Content>
         <div className='likemark-child-content likemark-child-menu' onClick={handleLikemarkClick}>
           <div className='likemark-child-header'>
-            <Image avatar src={'https://www.google.com/s2/favicons?domain=' + likemarkChild.url} />
+            <Image avatar src={utils.iconGeneratorByURL(likemarkChild.url)} />
             <h3 className='header'>{likemarkChild.name}</h3>
           </div>
           <SmoothCollapse expanded={expandedDetails}>
