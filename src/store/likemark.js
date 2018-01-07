@@ -3,6 +3,10 @@
 // Dependencies
 import axios from 'axios'
 
+// Models
+import type {Action as ActionType} from 'models/action'
+import type {Likemark as LikemarkState} from 'models/likemark'
+
 // Configs
 const baseUrl = 'http://localhost:42506/likemark/getWithFirstChildren/'
 
@@ -17,7 +21,7 @@ const GET_WITH_FIRST_CHILDREN_FAILURE = 'likemark/children/GET_WITH_FIRST_CHILDR
  * Likemark piece of state's initial values.
  * @readonly @const {object}
  */
-const initialState = {
+const initialState: LikemarkState = {
   id: 0,
   name: 'Root',
   url: 'http://likemark.io/',
@@ -31,21 +35,7 @@ const initialState = {
  * @param {Action{}} action - The triggered action.
  */
 
-type State = {
-  id: number,
-  name: string,
-  url: string,
-  parentId: number,
-  children: Array<Object>
-}
-
-type Action = {
-  type: string,
-  payload: ?Object,
-  error: ?Object
-}
-
-export default (state: State = initialState, action: Action) => {
+export default (state: LikemarkState = initialState, action: ActionType) => {
   switch (action.type) {
     case GET_WITH_FIRST_CHILDREN_SUCCESS:
       console.log('Current likemark:', action.payload)
@@ -66,7 +56,7 @@ export default (state: State = initialState, action: Action) => {
  * @param {string} id - The id of the likemark to be shown.
  * @returns {object} The GET_WITH_FIRST_CHILDREN action which is a GET request for a likemark.
  */
-export const getWithFirstChildren = (id: number) => {
+export const getWithFirstChildren = (id: number): Function => {
   const request = axios.get(baseUrl + id)
 
   return (dispatch: Function) => {

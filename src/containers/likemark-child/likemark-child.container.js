@@ -3,6 +3,9 @@
 // Dependencies
 import * as React from 'react'
 
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
+
 // Components
 import LikemarkChildUI from 'components/likemark-child/likemark-child.component'
 
@@ -10,11 +13,11 @@ import LikemarkChildUI from 'components/likemark-child/likemark-child.component'
 /**
  * Display a Likemark Child component.
  * @property {Function} props.handleLikemarkClick - Updates the likemark state.
- * @property {Object} props.likemarkChild - The name of the children.
+ * @property {LikemarkType} props.likemarkChild - The name of the children.
  */
 type Props = {
   handleLikemarkClick: (likemarkId: number) => void,
-  likemarkChild: {id: number, name: string, parentId: number, url: string}
+  likemarkChild: LikemarkType
 }
 
 type State = {

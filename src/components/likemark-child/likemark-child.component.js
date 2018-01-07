@@ -3,6 +3,9 @@
 // Dependencies
 import React from 'react'
 
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
+
 // Components
 import { List, Icon, Image } from 'semantic-ui-react'
 import SmoothCollapse from 'react-smooth-collapse'
@@ -14,13 +17,13 @@ import './likemark-child.scss'
 /**
  * Display a Likemark Child component.
  * @property {Function} props.handleLikemarkClick - Updates the likemark state.
- * @property {Object} props.likemarkChild - The child  object.
+ * @property {LikemarkType} props.likemarkChild - The child  object.
  * @property {Function} props.toggleDetailsVisibilty - Switch the likemark details visibility state.
  * @property {boolean} props.expandedDetails - Variable who determines if the details is expanded.
  */
 type Props = {
   handleLikemarkClick: (likemarkId: number) => void,
-  likemarkChild: {id: number, name: string, parentId: number, url: string},
+  likemarkChild: LikemarkType,
   toggleDetailsVisibilty: () => void,
   expandedDetails: boolean
 }

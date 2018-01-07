@@ -3,6 +3,9 @@
 // Dependencies
 import * as React from 'react'
 
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
+
 // Components
 import { List } from 'semantic-ui-react'
 import LikemarkChild from 'containers/likemark-child/likemark-child.container'
@@ -13,13 +16,13 @@ import './likemark-children.scss'
 // Main Component
 /**
  * Display the Likemark Children as a list component.
- * @property {Array<Object>} props.likemarkChildren - The likemark children to display.
+ * @property {Array<LikemarkType>} props.likemarkChildren - The likemark children to display.
  * @property {Function} props.handleLikemarkClick - The function which trigger the state update when a likemark child is selected.
  */
 
 type Props = {
   handleLikemarkClick: (likemarkId: number) => void,
-  likemarkChildren: Array<{id: number, name: string, parentId: number, url: string}>
+  likemarkChildren: Array<LikemarkType>
 }
 
 export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props) => {
@@ -29,11 +32,13 @@ export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props)
         <List celled >
           {
             likemarkChildren.map(likemarkChild =>
-              <LikemarkChild {...{
-                key: likemarkChild.id,
-                likemarkChild,
-                handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
-              }} />
+              <LikemarkChild
+                key={likemarkChild.id}
+                {...{
+                  likemarkChild,
+                  handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
+                }}
+              />
             )
           }
         </List>

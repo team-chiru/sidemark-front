@@ -1,7 +1,10 @@
 /* @flow */
 
 // Dependencies
-import React from 'react'
+import * as React from 'react'
+
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
 import { Icon } from 'semantic-ui-react'
@@ -14,12 +17,12 @@ const checkPrefix = (url: string) => url.match(/http:\/\//g) || url.match(/https
 
 // Main Component
 type Props = {
-  likemark: Object,
+  likemark: LikemarkType,
   handleLikemarkClick: Function,
   toggleMenuVisibility: Function
 }
 
-const LikemarkHeader = ({likemark = {}, handleLikemarkClick, toggleMenuVisibility}: Props) => (
+const LikemarkHeader = ({likemark, handleLikemarkClick, toggleMenuVisibility}: Props) => (
   <div className='likemark-header'>
     <div className='header-item'>
       <div className='header-btn-container'>

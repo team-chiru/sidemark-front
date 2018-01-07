@@ -3,6 +3,9 @@
 // Dependencies
 import * as React from 'react'
 
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
+
 // Components
 import LikemarkHeader from '../likemark-header/likemark-header.component'
 import LikemarkMenu from '../likemark-menu/likemark-menu.component'
@@ -13,11 +16,11 @@ import './likemark.scss'
 
 // Main Component
 type Props = {
-  likemark: Object,
+  likemark: LikemarkType,
   menuVisibility: boolean,
-  handleLikemarkClick: Function,
-  toggleMenuVisibility: Function,
-  setMenuVisibility: Function
+  handleLikemarkClick: (likemarkId: number) => void,
+  toggleMenuVisibility: () => void,
+  setMenuVisibility: (menuVisibility: boolean) => void
 }
 
 const Likemark = ({likemark, menuVisibility, handleLikemarkClick, toggleMenuVisibility, setMenuVisibility}: Props) => (

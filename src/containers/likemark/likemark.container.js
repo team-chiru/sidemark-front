@@ -14,13 +14,17 @@ import { bindActionCreators } from 'redux'
 // Components
 import LikemarkUI from 'components/likemark/likemark.component'
 
+// Models
+import type {Action as ActionType} from 'models/action'
+import type {Likemark as LikemarkType} from 'models/likemark'
+
 // Action Creators
 import { getWithFirstChildren } from 'store/likemark'
 
 // Main Component
 type Props = {
-  getWithFirstChildren: (likemarkId: number) => Object,
-  likemark: Object,
+  getWithFirstChildren: (likemarkId: number) => ActionType,
+  likemark: LikemarkType,
 }
 
 type State = {
