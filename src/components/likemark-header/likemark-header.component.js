@@ -8,6 +8,7 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
 import {Icon} from 'semantic-ui-react'
+import LikemarkDetails from 'components/likemark-details/likemark-details.component'
 
 // Services
 import {utils} from 'services'
@@ -42,7 +43,10 @@ const LikemarkHeader = ({likemark, handleLikemarkClick, toggleMenuVisibility}: P
           />
         }
       </div>
-      <h2> { likemark.id ? likemark.name : 'Root' } </h2>
+      <div>
+        <h2> { likemark.id ? likemark.name : 'Root' } </h2>
+        <LikemarkDetails {...{likemark}} />
+      </div>
     </div>
     <div className='header-item'>
       <div className='header-btn-container'>

@@ -9,6 +9,7 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 // Components
 import { List, Icon, Image } from 'semantic-ui-react'
 import SmoothCollapse from 'react-smooth-collapse'
+import LikemarkDetails from 'components/likemark-details/likemark-details.component'
 
 // Services
 import {utils} from 'services'
@@ -48,10 +49,7 @@ export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetails
             <h3 className='header'>{likemarkChild.name}</h3>
           </div>
           <SmoothCollapse expanded={expandedDetails}>
-            <div className='likemark-child-details'>
-              <p>ID: {likemarkChild.id}</p>
-              <p>URL: {likemarkChild.url}</p>
-            </div>
+            <LikemarkDetails likemark={likemarkChild} />
           </SmoothCollapse>
         </div>
         <div className='likemark-child-menu'>
