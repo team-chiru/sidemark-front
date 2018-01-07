@@ -16,6 +16,13 @@ import './likemark-header.scss'
 const checkPrefix = (url: string) => url.match(/http:\/\//g) || url.match(/https:\/\//g)
 
 // Main Component
+/**
+ * Display the likemark header.
+ * @property {LikemarkType} props.likemark - The current likemark.
+ * @property {Function} props.handleLikemarkClick - The function which trigger the state update when a likemark child is selected.
+ * @property {Function} props.toggleMenuVisibility - The function which switch the visibility of the menu component.
+ */
+
 type Props = {
   likemark: LikemarkType,
   handleLikemarkClick: Function,

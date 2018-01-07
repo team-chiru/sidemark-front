@@ -16,11 +16,12 @@ import './likemark-child.scss'
 // Main component
 /**
  * Display a Likemark Child component.
- * @property {Function} props.handleLikemarkClick - Updates the likemark state.
- * @property {LikemarkType} props.likemarkChild - The child  object.
- * @property {Function} props.toggleDetailsVisibilty - Switch the likemark details visibility state.
- * @property {boolean} props.expandedDetails - Variable who determines if the details is expanded.
+ * @property {Function} props.handleLikemarkClick - The function which trigger the state update when a likemark child is selected.
+ * @property {LikemarkType} props.likemarkChild - The likemark child object.
+ * @property {Function} props.toggleMenuVisibility - The function which switch the visibility of the menu component.
+ * @property {boolean} props.expandedDetails - Flag who determines if the details is expanded.
  */
+
 type Props = {
   handleLikemarkClick: (likemarkId: number) => void,
   likemarkChild: LikemarkType,

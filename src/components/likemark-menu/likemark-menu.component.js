@@ -8,6 +8,12 @@ import { Sidebar, Segment, Menu, Icon } from 'semantic-ui-react'
 import './likemark-menu.scss'
 
 // Main Component
+/**
+ * Display the likemark menu.
+ * @property {boolean} props.menuVisibility - Flag who determines the visibility of the menu component.
+ * @property {React.Node} props.children - Possible React children components.
+ */
+
 type Props = {
   children?: React.Node,
   menuVisibility: boolean

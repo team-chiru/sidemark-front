@@ -22,9 +22,15 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 import { getWithFirstChildren } from 'store/likemark'
 
 // Main Component
+/**
+ * Likemark presentational component which is responsable for the UI.
+ * @property {LikemarkType} props.likemark - The current likemark.
+ * @property {Function} props.getWithFirstChildren - The function which fetch a new likemark.
+ */
+
 type Props = {
-  getWithFirstChildren: (likemarkId: number) => ActionType,
   likemark: LikemarkType,
+  getWithFirstChildren: (likemarkId: number) => ActionType
 }
 
 type State = {

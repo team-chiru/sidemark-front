@@ -15,6 +15,15 @@ import LikemarkChildren from '../likemark-children/likemark-children.component'
 import './likemark.scss'
 
 // Main Component
+/**
+ * Likemark presentational component which is responsable for the UI.
+ * @property {LikemarkType} props.likemark - The current likemark.
+ * @property {boolean} props.menuVisibility - Flag who determines the visibility of the menu component.
+ * @property {Function} props.handleLikemarkClick - The function which trigger the state update when a likemark child is selected.
+ * @property {Function} props.toggleMenuVisibility - The function which switch the visibility of the menu component.
+ * @property {Function} props.setMenuVisibility - The function which set the visibility of the menu component.
+ */
+
 type Props = {
   likemark: LikemarkType,
   menuVisibility: boolean,

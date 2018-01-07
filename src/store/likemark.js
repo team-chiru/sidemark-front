@@ -5,7 +5,7 @@ import axios from 'axios'
 
 // Models
 import type {Action as ActionType} from 'models/action'
-import type {Likemark as LikemarkState} from 'models/likemark'
+import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Configs
 const baseUrl = 'http://localhost:42506/likemark/getWithFirstChildren/'
@@ -19,9 +19,9 @@ const GET_WITH_FIRST_CHILDREN_FAILURE = 'likemark/children/GET_WITH_FIRST_CHILDR
 
 /**
  * Likemark piece of state's initial values.
- * @readonly @const {object}
+ * @readonly @const {LikemarkType}
  */
-const initialState: LikemarkState = {
+const initialState: LikemarkType = {
   id: 0,
   name: 'Root',
   url: 'http://likemark.io/',
@@ -31,11 +31,11 @@ const initialState: LikemarkState = {
 
 /**
  * Reducer which manage the current likemark.
- * @param {State{}} state - The likemark state.
- * @param {Action{}} action - The triggered action.
+ * @param {State{}} LikemarkType - The likemark state.
+ * @param {Action{}} ActionType - The triggered action.
  */
 
-export default (state: LikemarkState = initialState, action: ActionType) => {
+export default (state: LikemarkType = initialState, action: ActionType) => {
   switch (action.type) {
     case GET_WITH_FIRST_CHILDREN_SUCCESS:
       console.log('Current likemark:', action.payload)

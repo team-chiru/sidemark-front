@@ -12,12 +12,12 @@ import LikemarkChildUI from 'components/likemark-child/likemark-child.component'
 // Main Component
 /**
  * Display a Likemark Child component.
- * @property {Function} props.handleLikemarkClick - Updates the likemark state.
  * @property {LikemarkType} props.likemarkChild - The name of the children.
+ * @property {Function} props.handleLikemarkClick - Updates the likemark state.
  */
 type Props = {
-  handleLikemarkClick: (likemarkId: number) => void,
-  likemarkChild: LikemarkType
+  likemarkChild: LikemarkType,
+  handleLikemarkClick: (likemarkId: number) => void
 }
 
 type State = {
