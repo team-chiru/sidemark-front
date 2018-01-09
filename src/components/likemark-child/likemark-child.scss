@@ -1,0 +1,43 @@
+.likemark-child {
+  display: flex !important;
+  min-height: 45px;
+
+  .content {
+    flex: 2;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-content: center
+  }
+
+  .likemark-child-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .likemark-child-content {
+    flex: 2;
+    width: 100%;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .likemark-child-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      h3 {
+        font-size: 21px
+      }
+    }
+  }
+
+  .likemark-child-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center
+  }
+}

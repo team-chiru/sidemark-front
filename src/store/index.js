@@ -1,7 +1,5 @@
 // Dependencies
 import { combineReducers } from 'redux'
-import undoable from 'redux-undo'
-import { reducer as children } from './children'
 import likemark from './likemark'
 
 /**
@@ -12,7 +10,4 @@ import likemark from './likemark'
  * @property {string} children.name - The name of the curent likemark child.
  */
 
-export default combineReducers({
-  children: undoable(children),
-  likemark
-})
+export default combineReducers({likemark})

@@ -1,41 +1,50 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+/* @flow */
 
-import LikemarkChild from '../likemark-child/likemark-child.component'
+// Dependencies
+import * as React from 'react'
 
-/**
- * A Likemark child referenced a likemark with minimal information.
- * @typedef {object} LikemarkChildState
- * @property {number} id - The unique id of the likemark child.
- * @property {string} name - The name of the likemark child.
- */
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
 
+// Components
+import { List } from 'semantic-ui-react'
+import LikemarkChild from 'containers/likemark-child/likemark-child.container'
+
+// Assets
+import './likemark-children.scss'
+
+// Main Component
 /**
  * Display the Likemark Children as a list component.
- * @class @extends React.Component
- * @property {LikemarkChildState[]} props.children - The likemark children to display.
- * @property {function} props.handleLikemarkClick - The function which trigger the state update when a likemark child is selected.
+ * @property {Array<LikemarkType>} props.likemarkChildren - The likemark children to display.
+ * @property {Function} props.handleLikemarkClick - The function which trigger the state update when a likemark child is selected.
  */
-export default class LikemarkChildren extends React.Component {
-  static get propTypes () {
-    return {
-      children: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired
-      }).isRequired).isRequired,
-      handleLikemarkClick: PropTypes.func.isRequired
-    }
-  }
 
-  render = () => {
-    let { children, handleLikemarkClick } = this.props
-
-    return (
-      <ul>
-        {children.map(child =>
-          <LikemarkChild key={child.id} name={child.name} onClick={() => handleLikemarkClick(child.id)} />
-        )}
-      </ul>
-    )
-  }
+type Props = {
+  handleLikemarkClick: (likemarkId: number) => void,
+  likemarkChildren: Array<LikemarkType>
 }
+
+export const LikemarkChildren = ({likemarkChildren, handleLikemarkClick}: Props) => {
+  return (
+    <div id='likemark-children-wrapper'>
+      <div id='likemark-children'>
+        <List celled >
+          {
+            likemarkChildren.map(likemarkChild =>
+              <LikemarkChild
+                key={likemarkChild.id}
+                {...{
+                  likemarkChild,
+                  handleLikemarkClick: () => handleLikemarkClick(likemarkChild.id)
+                }}
+              />
+            )
+          }
+        </List>
+      </div>
+    </div>
+  )
+}
+
+export default LikemarkChildren
