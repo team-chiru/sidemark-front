@@ -1,14 +1,12 @@
 /* @flow */
 
-// Dependencies
-import axios from 'axios'
-
 // Models
 import type {Action as ActionType} from 'models/action'
 import type {Likemark as LikemarkType} from 'models/likemark'
+import {xhr, END_POINTS} from 'services/xhr';
 
-// Configs
-const baseUrl = 'http://localhost:42506/likemark/getWithFirstChildren/'
+// End-points
+const GET_WITH_FIRST_CHILDREN = END_POINTS.API_GET_WITH_FIRST_CHILDREN
 
 /**
  * Actions which manage the request from getWithFirstChildren action creator.
@@ -57,13 +55,13 @@ export default (state: LikemarkType = initialState, action: ActionType) => {
  * @returns {object} The GET_WITH_FIRST_CHILDREN action which is a GET request for a likemark.
  */
 export const getWithFirstChildren = (id: number): Function => {
-  const request = axios.get(baseUrl + id)
+  const request = xhr.get(GET_WITH_FIRST_CHILDREN, id.toString());
 
   return (dispatch: Function) => {
     request
       .then(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_SUCCESS,
-        payload: res.data.message
+        payload: res.data && res.data.message ? res.data.message : console.log('The payload data structure was changed!')
       }))
       .catch(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_FAILURE,
