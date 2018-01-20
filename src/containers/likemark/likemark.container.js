@@ -19,7 +19,7 @@ import type {Action as ActionType} from 'models/action'
 import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Action Creators
-import { getWithFirstChildren } from 'store/likemark'
+import { getWithFirstChildren } from 'store/likemark/likemark'
 
 // Main Component
 /**

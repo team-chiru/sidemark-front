@@ -1,9 +1,14 @@
 /* @flow */
 
+// See https://github.com/erikras/ducks-modular-redux
+
+// Dependencies
+import {xhr, END_POINTS} from 'services/xhr';
+import {getWithFirstChildrenPayloadAdapter, getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
+
 // Models
 import type {Action as ActionType} from 'models/action'
 import type {Likemark as LikemarkType} from 'models/likemark'
-import {xhr, END_POINTS} from 'services/xhr';
 
 // End-points
 const GET_WITH_FIRST_CHILDREN = END_POINTS.API_GET_WITH_FIRST_CHILDREN
@@ -32,7 +37,6 @@ const initialState: LikemarkType = {
  * @param {State{}} LikemarkType - The likemark state.
  * @param {Action{}} ActionType - The triggered action.
  */
-
 export default (state: LikemarkType = initialState, action: ActionType) => {
   switch (action.type) {
     case GET_WITH_FIRST_CHILDREN_SUCCESS:
@@ -61,11 +65,11 @@ export const getWithFirstChildren = (id: number): Function => {
     request
       .then(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_SUCCESS,
-        payload: res.data && res.data.message ? res.data.message : console.log('The payload data structure was changed!')
+        payload: getWithFirstChildrenPayloadAdapter(res)
       }))
       .catch(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_FAILURE,
-        error: res
+        error: getWithFirstChildrenErrorAdapter(res)
       }))
   }
 }

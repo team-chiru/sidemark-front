@@ -1,6 +1,6 @@
 // Dependencies
 import { combineReducers } from 'redux'
-import likemark from './likemark'
+import likemark from './likemark/likemark'
 
 /**
  * A Likemark child referenced a likemark with minimal information.
