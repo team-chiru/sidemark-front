@@ -27,14 +27,15 @@ import './likemark.scss'
 type Props = {
   likemark: LikemarkType,
   menuVisibility: boolean,
+  setLanguage: Function,
   handleLikemarkClick: (likemarkId: number) => void,
   toggleMenuVisibility: () => void,
   setMenuVisibility: (menuVisibility: boolean) => void
 }
 
-const Likemark = ({likemark, menuVisibility, handleLikemarkClick, toggleMenuVisibility, setMenuVisibility}: Props) => (
+const Likemark = ({likemark, menuVisibility, setLanguage, handleLikemarkClick, toggleMenuVisibility, setMenuVisibility}: Props) => (
   <div className='likemark'>
-    <LikemarkMenu {...{menuVisibility}}>
+    <LikemarkMenu {...{menuVisibility, setLanguage}}>
       <LikemarkHeader {...{likemark, handleLikemarkClick, toggleMenuVisibility}} />
       <LikemarkChildren {...{likemarkChildren: likemark.children, handleLikemarkClick}} />
     </LikemarkMenu>

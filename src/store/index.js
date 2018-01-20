@@ -1,6 +1,7 @@
 // Dependencies
 import { combineReducers } from 'redux'
 import likemark from './likemark/likemark'
+import { i18nReducer } from 'react-redux-i18n'
 
 /**
  * A Likemark child referenced a likemark with minimal information.
@@ -10,4 +11,4 @@ import likemark from './likemark/likemark'
  * @property {string} children.name - The name of the curent likemark child.
  */
 
-export default combineReducers({likemark})
+export default combineReducers({likemark, i18n: i18nReducer})
