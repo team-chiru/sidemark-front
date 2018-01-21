@@ -1,10 +1,12 @@
 const frenchTranslations = {
   fr: {
-    likemarkMenu: {
-      home: 'fr-Home',
-      add: 'fr-Add',
-      settings: 'fr-Settings',
-      language: 'fr-Language'
+    likemark: {
+      likemarkMenu: {
+        home: 'fr-Home',
+        add: 'fr-Add',
+        settings: 'fr-Settings',
+        language: 'fr-Language'
+      }
     }
   }
 };

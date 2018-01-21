@@ -1,10 +1,12 @@
 const portugueseTranslations = {
   pt: {
-    likemarkMenu: {
-      home: 'pt-Home',
-      add: 'pt-Add',
-      settings: 'pt-Settings',
-      language: 'pt-Language'
+    likemark: {
+      likemarkMenu: {
+        home: 'pt-Home',
+        add: 'pt-Add',
+        settings: 'pt-Settings',
+        language: 'pt-Language'
+      }
     }
   }
 };

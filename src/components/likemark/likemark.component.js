@@ -30,12 +30,17 @@ type Props = {
   setLanguage: Function,
   handleLikemarkClick: (likemarkId: number) => void,
   toggleMenuVisibility: () => void,
-  setMenuVisibility: (menuVisibility: boolean) => void
+  setMenuVisibility: (menuVisibility: boolean) => void,
+  languageOptions: Object,
+  translationObject: Object
 }
 
-const Likemark = ({likemark, menuVisibility, setLanguage, handleLikemarkClick, toggleMenuVisibility, setMenuVisibility}: Props) => (
+const Likemark = ({
+  likemark, menuVisibility, setLanguage, handleLikemarkClick,
+  toggleMenuVisibility, setMenuVisibility, languageOptions, translationObject
+}: Props) => (
   <div className='likemark'>
-    <LikemarkMenu {...{menuVisibility, setLanguage}}>
+    <LikemarkMenu {...{menuVisibility, setLanguage, languageOptions, translationObject: translationObject.likemarkMenu}}>
       <LikemarkHeader {...{likemark, handleLikemarkClick, toggleMenuVisibility}} />
       <LikemarkChildren {...{likemarkChildren: likemark.children, handleLikemarkClick}} />
     </LikemarkMenu>

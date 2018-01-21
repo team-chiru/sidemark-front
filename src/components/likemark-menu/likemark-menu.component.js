@@ -2,11 +2,7 @@
 
 // Dependencies
 import * as React from 'react'
-import {I18n} from 'react-redux-i18n'
 import { Sidebar, Segment, Menu, Icon, Dropdown } from 'semantic-ui-react'
-
-// i18n translations
-import {languageOptions} from 'services/i18n';
 
 // Assets
 import './likemark-menu.scss'
@@ -21,29 +17,31 @@ import './likemark-menu.scss'
 type Props = {
   children?: React.Node,
   menuVisibility: boolean,
-  setLanguage: Function
+  setLanguage: Function,
+  languageOptions: Object,
+  translationObject: Object
 }
 
-const LikemarkMenu = ({children, menuVisibility, setLanguage}: Props) => {
+const LikemarkMenu = ({children, menuVisibility, setLanguage, languageOptions, translationObject}: Props) => {
   return (
       <Sidebar.Pushable as={Segment}>
         <div className='likemark-menu'>
           <Sidebar as={Menu} animation='push' direction='top' visible={menuVisibility} inverted>
             <Menu.Item name='home'>
               <Icon name='home' />
-              {I18n.t('likemarkMenu.home')}
+              {translationObject.home}
             </Menu.Item>
             <Menu.Item name='add'>
               <Icon name='add' />
-              {I18n.t('likemarkMenu.add')}
+              {translationObject.add}
             </Menu.Item>
             <Menu.Item name='settings'>
               <Icon name='settings' />
-              {I18n.t('likemarkMenu.settings')}
+              {translationObject.settings}
             </Menu.Item>
-            <Menu.Item name='home'>
+            <Menu.Item name='language'>
               <Dropdown
-                placeholder={I18n.t('likemarkMenu.language')}
+                placeholder={translationObject.language}
                 fluid
                 search
                 selection

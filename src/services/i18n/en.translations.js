@@ -1,10 +1,12 @@
 const englishTranslations = {
   en: {
-    likemarkMenu: {
-      home: 'Home',
-      add: 'Add',
-      settings: 'Settings',
-      language: 'Language'
+    likemark: {
+      likemarkMenu: {
+        home: 'Home',
+        add: 'Add',
+        settings: 'Settings',
+        language: 'Language'
+      }
     }
   }
 };
