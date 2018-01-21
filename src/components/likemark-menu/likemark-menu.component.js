@@ -2,7 +2,12 @@
 
 // Dependencies
 import * as React from 'react'
+import {I18n} from 'react-redux-i18n'
 import { Sidebar, Segment, Menu, Icon, Dropdown } from 'semantic-ui-react'
+
+// i18n translations
+import {languageOptions} from 'services/i18n';
+
 // Assets
 import './likemark-menu.scss'
 
@@ -12,13 +17,6 @@ import './likemark-menu.scss'
  * @property {boolean} props.menuVisibility - Flag who determines the visibility of the menu component.
  * @property {React.Node} props.children - Possible React children components.
  */
-
- const countryOptions = [
-   { key: 'gb', value: 'gb', flag: 'gb', text: 'English' },
-   { key: 'pt', value: 'pt', flag: 'pt', text: 'Portuguese' },
-   { key: 'fr', value: 'fr', flag: 'fr', text: 'French' },
-   { key: 'es', value: 'es', flag: 'es', text: 'Spanish' }
-  ]
 
 type Props = {
   children?: React.Node,
@@ -33,18 +31,25 @@ const LikemarkMenu = ({children, menuVisibility, setLanguage}: Props) => {
           <Sidebar as={Menu} animation='push' direction='top' visible={menuVisibility} inverted>
             <Menu.Item name='home'>
               <Icon name='home' />
-              Home
+              {I18n.t('likemarkMenu.home')}
             </Menu.Item>
             <Menu.Item name='add'>
               <Icon name='add' />
-              Add
+              {I18n.t('likemarkMenu.add')}
             </Menu.Item>
             <Menu.Item name='settings'>
               <Icon name='settings' />
-              Settings
+              {I18n.t('likemarkMenu.settings')}
             </Menu.Item>
             <Menu.Item name='home'>
-              <Dropdown placeholder='Language' fluid search selection options={countryOptions} onChange={(e, data) => setLanguage(data.value)}/>
+              <Dropdown
+                placeholder={I18n.t('likemarkMenu.language')}
+                fluid
+                search
+                selection
+                options={languageOptions}
+                onChange={(e, data) => setLanguage(data.value)}
+              />
             </Menu.Item>
           </Sidebar>
           <Sidebar.Pusher>

@@ -76,6 +76,6 @@ export class Likemark extends React.Component<Props, State> {
 }
 
 export default connect(
-  state => ({ likemark: state.likemark }),
+  state => ({ likemark: state.likemark, language: state.i18n.locale }),
   dispatch => bindActionCreators({ getWithFirstChildren, setLocale }, dispatch)
 )(Likemark)
