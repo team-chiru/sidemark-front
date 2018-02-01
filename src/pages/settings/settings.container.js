@@ -29,8 +29,9 @@ export class Settings extends React.Component<Props, void> {
   render () {
     return (
       <div id='settings-page'>
+      {console.log(this.props)}
         <div>
-          <h2>Seetings</h2>
+          <h2>Settings</h2>
         </div>
         <div>
           <Dropdown

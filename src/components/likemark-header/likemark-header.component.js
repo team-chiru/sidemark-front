@@ -26,11 +26,10 @@ import './likemark-header.scss'
 
 type Props = {
   likemark: LikemarkType,
-  handleLikemarkClick: Function,
-  toggleMenuVisibility: Function
+  handleLikemarkClick: Function
 }
 
-const LikemarkHeader = ({likemark, handleLikemarkClick, toggleMenuVisibility}: Props) => (
+const LikemarkHeader = ({likemark, handleLikemarkClick}: Props) => (
   <div className='likemark-header'>
     <div className='header-item'>
       <div className='header-btn-container'>
@@ -53,9 +52,6 @@ const LikemarkHeader = ({likemark, handleLikemarkClick, toggleMenuVisibility}: P
         <a target='_blank' href={`${utils.checkPrefix(likemark.url) ? likemark.url : 'http://' + likemark.url}`}>
           <Icon name='share' size='large' />
         </a>
-      </div>
-      <div className='header-btn-container'>
-        <Icon name='bars' size='large' onClick={toggleMenuVisibility} />
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 // Dependencies
 import * as React from 'react'
-import { Sidebar, Segment, Menu, Icon, Dropdown } from 'semantic-ui-react'
+import { Sidebar, Segment, Menu, Icon } from 'semantic-ui-react'
 
 // Assets
 import './likemark-menu.scss'
@@ -17,37 +17,21 @@ import './likemark-menu.scss'
 type Props = {
   children?: React.Node,
   menuVisibility: boolean,
-  setLanguage: Function,
-  languageOptions: Object,
   translationObject: Object
 }
 
-const LikemarkMenu = ({children, menuVisibility, setLanguage, languageOptions, translationObject}: Props) => {
+const LikemarkMenu = ({children, menuVisibility, translationObject}: Props) => {
   return (
       <Sidebar.Pushable as={Segment}>
         <div className='likemark-menu'>
-          <Sidebar as={Menu} animation='push' direction='top' visible={menuVisibility} inverted>
+          <Sidebar as={Menu} animation='push' direction='top' visible={true} inverted>
             <Menu.Item name='home'>
               <Icon name='home' />
               {translationObject.home}
             </Menu.Item>
-            <Menu.Item name='add'>
-              <Icon name='add' />
-              {translationObject.add}
-            </Menu.Item>
             <Menu.Item name='settings'>
               <Icon name='settings' />
               {translationObject.settings}
-            </Menu.Item>
-            <Menu.Item name='language'>
-              <Dropdown
-                placeholder={translationObject.language}
-                fluid
-                search
-                selection
-                options={languageOptions}
-                onChange={(e, data) => setLanguage(data.value)}
-              />
             </Menu.Item>
           </Sidebar>
           <Sidebar.Pusher>

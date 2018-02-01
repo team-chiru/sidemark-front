@@ -10,7 +10,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {I18n, setLocale} from 'react-redux-i18n';
+import {I18n, setLocale} from 'react-redux-i18n'
 
 // Components
 import LikemarkUI from 'components/likemark/likemark.component'
@@ -21,9 +21,6 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Action Creators
 import {getWithFirstChildren} from 'store/likemark/likemark'
-
-// i18n translations
-import {languageOptions} from 'services/i18n';
 
 // Main Component
 /**
@@ -68,9 +65,6 @@ export class Likemark extends React.Component<Props, State> {
     return (
       <LikemarkUI
         likemark={this.props.likemark}
-        menuVisibility={this.state.menuVisibility}
-        setLanguage={this.props.setLocale}
-        languageOptions={languageOptions}
         translationObject={I18n.t('likemark')}
         handleLikemarkClick={this.handleLikemarkClick.bind(this)}
         toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
@@ -81,6 +75,6 @@ export class Likemark extends React.Component<Props, State> {
 }
 
 export default connect(
-  state => ({ likemark: state.likemark, language: state.i18n.locale }),
-  dispatch => bindActionCreators({ getWithFirstChildren, setLocale }, dispatch)
+  (state): Object => ({ likemark: state.likemark, language: state.i18n.locale }),
+  (dispatch): Function => bindActionCreators({ getWithFirstChildren, setLocale }, dispatch)
 )(Likemark)

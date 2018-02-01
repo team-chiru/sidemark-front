@@ -8,7 +8,6 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
 import LikemarkHeader from '../likemark-header/likemark-header.component'
-import LikemarkMenu from '../likemark-menu/likemark-menu.component'
 import LikemarkChildren from '../likemark-children/likemark-children.component'
 
 // Assets
@@ -26,24 +25,14 @@ import './likemark.scss'
 
 type Props = {
   likemark: LikemarkType,
-  menuVisibility: boolean,
-  setLanguage: Function,
   handleLikemarkClick: (likemarkId: number) => void,
-  toggleMenuVisibility: () => void,
-  setMenuVisibility: (menuVisibility: boolean) => void,
-  languageOptions: Object,
   translationObject: Object
 }
 
-const Likemark = ({
-  likemark, menuVisibility, setLanguage, handleLikemarkClick,
-  toggleMenuVisibility, setMenuVisibility, languageOptions, translationObject
-}: Props) => (
+const Likemark = ({likemark, handleLikemarkClick, translationObject}: Props) => (
   <div className='likemark'>
-    <LikemarkMenu {...{menuVisibility, setLanguage, languageOptions, translationObject: translationObject.likemarkMenu}}>
-      <LikemarkHeader {...{likemark, handleLikemarkClick, toggleMenuVisibility}} />
-      <LikemarkChildren {...{likemarkChildren: likemark.children, handleLikemarkClick}} />
-    </LikemarkMenu>
+    <LikemarkHeader {...{likemark, handleLikemarkClick}} />
+    <LikemarkChildren {...{likemarkChildren: likemark.children, handleLikemarkClick}} />
   </div>
 )
 
