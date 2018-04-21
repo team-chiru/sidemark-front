@@ -5,7 +5,7 @@ import * as React from 'react'
 import { Sidebar, Segment, Menu, Icon } from 'semantic-ui-react'
 
 // Assets
-import './likemark-menu.scss'
+import './Menu.scss'
 
 // Main Component
 /**

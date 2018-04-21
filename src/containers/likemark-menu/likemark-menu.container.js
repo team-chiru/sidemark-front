@@ -4,10 +4,10 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {I18n, setLocale} from 'react-redux-i18n';
+import {I18n, setLocale} from 'react-redux-i18n'
 
 // Components
-import LikemarkMenuUI from 'components/likemark-menu/likemark-menu.component'
+import LikemarkMenuUI from 'components/Menu/Menu.component'
 
 // Main Component
 type Props = {
