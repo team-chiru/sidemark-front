@@ -8,7 +8,7 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
 import { List } from 'semantic-ui-react'
-import LikemarkChild from 'containers/likemark-child/likemark-child.container'
+import LikemarkChild from 'containers/Child/Child.container'
 
 // Assets
 import './Children.scss'

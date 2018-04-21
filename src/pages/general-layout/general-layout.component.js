@@ -5,7 +5,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 
 // Components
-import LikemarkMenu from 'containers/likemark-menu/likemark-menu.container'
+import LikemarkMenu from 'containers/Menu/Menu.container'
 // Assets
 import './general-layout.scss'
 
