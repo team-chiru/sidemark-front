@@ -7,7 +7,7 @@ import React from 'react'
 import {Provider} from 'react-redux'
 import {BrowserRouter as Router} from 'react-router-dom'
 import GeneralLayout from 'pages/GeneralLayout/GeneralLayout.component'
-import Routes from './root.routes'
+import Routes from './Root.routes'
 
 // Main Component
 type Props = {
