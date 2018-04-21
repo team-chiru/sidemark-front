@@ -11,7 +11,7 @@ import { List } from 'semantic-ui-react'
 import LikemarkChild from 'containers/likemark-child/likemark-child.container'
 
 // Assets
-import './likemark-children.scss'
+import './Children.scss'
 
 // Main Component
 /**
