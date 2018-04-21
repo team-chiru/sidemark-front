@@ -11,7 +11,7 @@ import LikemarkHeader from '../likemark-header/likemark-header.component'
 import LikemarkChildren from '../Children/Children.component'
 
 // Assets
-import './likemark.scss'
+import './Likemark.scss'
 
 // Main Component
 /**

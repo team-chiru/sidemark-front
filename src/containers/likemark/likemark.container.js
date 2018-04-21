@@ -13,7 +13,7 @@ import { bindActionCreators } from 'redux'
 import {I18n, setLocale} from 'react-redux-i18n'
 
 // Components
-import LikemarkUI from 'components/likemark/likemark.component'
+import LikemarkUI from 'components/Likemark/Likemark.component'
 
 // Models
 import type {Action as ActionType} from 'models/action'
