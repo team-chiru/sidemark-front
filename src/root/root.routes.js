@@ -5,9 +5,9 @@ import React from 'react'
 import {Redirect, Route, Switch} from 'react-router-dom'
 
 // Pages
-import Home from 'pages/home/home.component'
-import Settings from 'pages/settings/settings.container'
-import NoMatch from 'pages/no-match/no-match.component'
+import Home from 'pages/Home/Home.component'
+import Settings from 'pages/Settings/Settings.container'
+import NoMatch from 'pages/NoMatch/NoMatch.component'
 
 // Main Component
 export default () => (

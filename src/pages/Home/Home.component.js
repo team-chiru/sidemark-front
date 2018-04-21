@@ -7,7 +7,7 @@ import React from 'react'
 import Likemark from 'containers/Likemark/Likemark.container'
 
 // Assets
-import './home.scss'
+import './Home.scss'
 
 // Main Component
 const Home = () => (
