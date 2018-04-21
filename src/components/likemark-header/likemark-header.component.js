@@ -8,7 +8,7 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
 import {Icon} from 'semantic-ui-react'
-import LikemarkDetails from 'components/likemark-details/likemark-details.component'
+import LikemarkDetails from 'components/Details/Details.component'
 
 // Services
 import {utils} from 'services'
