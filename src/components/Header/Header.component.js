@@ -14,7 +14,7 @@ import LikemarkDetails from 'components/Details/Details.component'
 import {utils} from 'services'
 
 // Assets
-import './likemark-header.scss'
+import './Header.scss'
 
 // Main Component
 /**

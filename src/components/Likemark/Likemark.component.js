@@ -7,7 +7,7 @@ import * as React from 'react'
 import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Components
-import LikemarkHeader from '../likemark-header/likemark-header.component'
+import LikemarkHeader from '../Header/Header.component'
 import LikemarkChildren from '../Children/Children.component'
 
 // Assets
