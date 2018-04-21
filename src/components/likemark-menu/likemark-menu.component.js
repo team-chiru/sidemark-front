@@ -22,25 +22,25 @@ type Props = {
 
 const LikemarkMenu = ({children, menuVisibility, translationObject}: Props) => {
   return (
-      <Sidebar.Pushable as={Segment}>
-        <div className='likemark-menu'>
-          <Sidebar as={Menu} animation='push' direction='top' visible={true} inverted>
-            <Menu.Item name='home'>
-              <Icon name='home' />
-              {translationObject.home}
-            </Menu.Item>
-            <Menu.Item name='settings'>
-              <Icon name='settings' />
-              {translationObject.settings}
-            </Menu.Item>
-          </Sidebar>
-          <Sidebar.Pusher>
-            <Segment basic>
-              {children}
-            </Segment>
-          </Sidebar.Pusher>
-          </div>
-      </Sidebar.Pushable>
+    <Sidebar.Pushable as={Segment}>
+      <div className='likemark-menu'>
+        <Sidebar as={Menu} animation='push' direction='top' visible={true} inverted>
+          <Menu.Item name='home'>
+            <Icon name='home' />
+            {translationObject.home}
+          </Menu.Item>
+          <Menu.Item name='settings'>
+            <Icon name='settings' />
+            {translationObject.settings}
+          </Menu.Item>
+        </Sidebar>
+        <Sidebar.Pusher>
+          <Segment basic>
+            {children}
+          </Segment>
+        </Sidebar.Pusher>
+      </div>
+    </Sidebar.Pushable>
   )
 }
 
