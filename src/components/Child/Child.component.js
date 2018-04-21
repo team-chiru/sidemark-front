@@ -15,7 +15,7 @@ import LikemarkDetails from 'components/likemark-details/likemark-details.compon
 import {utils} from 'services'
 
 // Assets
-import './likemark-child.scss'
+import './Child.scss'
 
 // Main component
 /**
