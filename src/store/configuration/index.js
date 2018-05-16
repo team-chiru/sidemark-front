@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 import rootReducer from '../index'
 
 // i18n translations
-import {translationsObject} from 'services/i18n';
+import {translationsObject} from '~/services/i18n';
 
 // Middlewares
 const middlewares = [thunk]

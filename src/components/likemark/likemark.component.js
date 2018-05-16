@@ -2,13 +2,12 @@
 
 // Dependencies
 import * as React from 'react'
-
-// Models
-import type {Likemark as LikemarkType} from 'models/likemark'
-
 // Components
 import LikemarkHeader from '../likemark-header/likemark-header.component'
 import LikemarkChildren from '../likemark-children/likemark-children.component'
+
+// Models
+import type {Likemark as LikemarkType} from '~/models/likemark'
 
 // Assets
 import './likemark.scss'

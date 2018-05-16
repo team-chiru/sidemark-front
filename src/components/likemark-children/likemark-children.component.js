@@ -4,11 +4,11 @@
 import * as React from 'react'
 
 // Models
-import type {Likemark as LikemarkType} from 'models/likemark'
+import type {Likemark as LikemarkType} from '~/models/likemark'
 
 // Components
 import { List } from 'semantic-ui-react'
-import LikemarkChild from 'containers/likemark-child/likemark-child.container'
+import LikemarkChild from '~/containers/likemark-child/likemark-child.container'
 
 // Assets
 import './likemark-children.scss'

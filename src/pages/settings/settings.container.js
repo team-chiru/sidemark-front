@@ -10,7 +10,7 @@ import {I18n, setLocale} from 'react-redux-i18n';
 import { Dropdown } from 'semantic-ui-react'
 
 // i18n translations
-import {languageOptions} from 'services/i18n';
+import {languageOptions} from '~/services/i18n';
 
 // Assets
 import './settings.scss'

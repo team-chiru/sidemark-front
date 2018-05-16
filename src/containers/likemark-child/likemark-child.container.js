@@ -4,10 +4,10 @@
 import * as React from 'react'
 
 // Models
-import type {Likemark as LikemarkType} from 'models/likemark'
+import type {Likemark as LikemarkType} from '~/models/likemark'
 
 // Components
-import LikemarkChildUI from 'components/likemark-child/likemark-child.component'
+import LikemarkChildUI from '~/components/likemark-child/likemark-child.component'
 
 // Main Component
 /**

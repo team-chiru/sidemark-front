@@ -3,12 +3,12 @@
 // See https://github.com/erikras/ducks-modular-redux
 
 // Dependencies
-import {xhr, END_POINTS} from 'services/xhr';
+import {xhr, END_POINTS} from '~/services/xhr';
 import {getWithFirstChildrenPayloadAdapter, getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
 
 // Models
-import type {Action as ActionType} from 'models/action'
-import type {Likemark as LikemarkType} from 'models/likemark'
+import type {Action as ActionType} from '~/models/action'
+import type {Likemark as LikemarkType} from '~/models/likemark'
 
 // End-points
 const GET_WITH_FIRST_CHILDREN = END_POINTS.API_GET_WITH_FIRST_CHILDREN

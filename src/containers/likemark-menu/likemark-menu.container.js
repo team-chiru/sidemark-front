@@ -4,10 +4,10 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {I18n, setLocale} from 'react-redux-i18n';
+import {I18n, setLocale} from 'react-redux-i18n'
 
 // Components
-import LikemarkMenuUI from 'components/likemark-menu/likemark-menu.component'
+import LikemarkMenuUI from '~/components/likemark-menu/likemark-menu.component'
 
 // Main Component
 type Props = {
@@ -41,10 +41,9 @@ export class LikemarkMenu extends React.Component<Props, State> {
         menuVisibility: this.state.menuVisibility,
         toggleMenuVisibility: this.toggleMenuVisibility.bind(this),
         translationObject: I18n.t('likemark.likemarkMenu')
-      }}/>
+      }} />
     )
   }
-
 }
 
 export default connect(

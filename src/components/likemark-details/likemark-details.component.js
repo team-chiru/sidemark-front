@@ -4,7 +4,7 @@
 import * as React from 'react'
 
 // Models
-import type {Likemark as LikemarkType} from 'models/likemark'
+import type {Likemark as LikemarkType} from '~/models/likemark'
 
 // Assets
 import './likemark-details.scss'

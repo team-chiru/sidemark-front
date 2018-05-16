@@ -4,14 +4,14 @@
 import * as React from 'react'
 
 // Models
-import type {Likemark as LikemarkType} from 'models/likemark'
+import type {Likemark as LikemarkType} from '~/models/likemark'
 
 // Components
 import {Icon} from 'semantic-ui-react'
-import LikemarkDetails from 'components/likemark-details/likemark-details.component'
+import LikemarkDetails from '~/components/likemark-details/likemark-details.component'
 
 // Services
-import {utils} from 'services'
+import {utils} from '~/services'
 
 // Assets
 import './likemark-header.scss'

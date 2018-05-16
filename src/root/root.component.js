@@ -6,7 +6,7 @@ import React from 'react'
 // Components
 import {Provider} from 'react-redux'
 import {BrowserRouter as Router} from 'react-router-dom'
-import GeneralLayout from 'pages/general-layout/general-layout.component'
+import GeneralLayout from '~/pages/general-layout/general-layout.component'
 import Routes from './root.routes'
 
 // Main Component
