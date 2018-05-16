@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 
 // Config
 import configureStore from '~/store/configuration'
-// import registerServiceWorker from 'registerServiceWorker'
+// FIXME import registerServiceWorker from 'registerServiceWorker'
 
 // Root
 import Root from '~/root/root.component'
@@ -15,4 +15,4 @@ import 'antd/dist/antd.css'
 
 // Inserting the React App in the DOM
 ReactDOM.render(<Root store={configureStore()} />, document.getElementById('root'))
-// registerServiceWorker()
+// FIXME registerServiceWorker()
