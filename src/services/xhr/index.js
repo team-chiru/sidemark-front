@@ -1,7 +1,7 @@
 /* @flow */
 
 // Dependencies
-import axios from 'axios'
+// import axios from 'axios'
 
 class Xhr {}
 

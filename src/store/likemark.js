@@ -23,7 +23,7 @@ const GET_WITH_FIRST_CHILDREN_FAILURE = 'likemark/children/GET_WITH_FIRST_CHILDR
  */
 const initialState: LikemarkType = {
   id: 0,
-  name: 'Root',
+  title: 'Root',
   url: 'http://likemark.io/',
   parentId: -1,
   children: []
@@ -57,13 +57,13 @@ export default (state: LikemarkType = initialState, action: ActionType) => {
  * @returns {object} The GET_WITH_FIRST_CHILDREN action which is a GET request for a likemark.
  */
 export const getWithFirstChildren = (id: number): Function => {
-  const request = axios.get(baseUrl + id)
+  const request = axios.get(baseUrl + (id === 0 ? 'root' : id))
 
   return (dispatch: Function) => {
     request
       .then(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_SUCCESS,
-        payload: res.data.message
+        payload: urlParser(res.data.message)
       }))
       .catch(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_FAILURE,
@@ -71,3 +71,5 @@ export const getWithFirstChildren = (id: number): Function => {
       }))
   }
 }
+
+const urlParser = (likemark) => likemark && likemark.url ? likemark : {...likemark, url: 'http://likemark.io/'}

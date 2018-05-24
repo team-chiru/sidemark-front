@@ -2,7 +2,7 @@
 
 export type Likemark = {
   id: number,
-  name: string,
+  title: string,
   url: string,
   parentId: number,
   children: Array<Likemark>

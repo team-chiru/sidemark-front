@@ -44,7 +44,7 @@ const LikemarkHeader = ({likemark, handleLikemarkClick, toggleMenuVisibility}: P
         }
       </div>
       <div>
-        <h2> { likemark.id ? likemark.name : 'Root' } </h2>
+        <h2> { likemark.id ? likemark.title : 'Root' } </h2>
         <LikemarkDetails {...{likemark}} />
       </div>
     </div>
