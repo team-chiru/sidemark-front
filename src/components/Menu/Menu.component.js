@@ -29,6 +29,10 @@ const LikemarkMenu = ({children, menuVisibility, translationObject}: Props) => {
             <Icon name='home' />
             {translationObject.home}
           </Menu.Item>
+          <Menu.Item name='add'>
+            <Icon name='add' />
+             {translationObject.add}
+          </Menu.Item>
           <Menu.Item name='settings'>
             <Icon name='settings' />
             {translationObject.settings}
