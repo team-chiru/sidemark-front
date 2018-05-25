@@ -1,7 +1,12 @@
 /* @flow */
 
+// See https://github.com/erikras/ducks-modular-redux
+
 // Dependencies
 import axios from 'axios'
+
+// Dependencies
+import {getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
 
 // Models
 import type {Action as ActionType} from 'models/action'
@@ -34,7 +39,6 @@ const initialState: LikemarkType = {
  * @param {State{}} LikemarkType - The likemark state.
  * @param {Action{}} ActionType - The triggered action.
  */
-
 export default (state: LikemarkType = initialState, action: ActionType) => {
   switch (action.type) {
     case GET_WITH_FIRST_CHILDREN_SUCCESS:
@@ -58,7 +62,6 @@ export default (state: LikemarkType = initialState, action: ActionType) => {
  */
 export const getWithFirstChildren = (id: number): Function => {
   const request = axios.get(baseUrl + (id === 0 ? 'root' : id))
-
   return (dispatch: Function) => {
     request
       .then(res => dispatch({
@@ -67,7 +70,7 @@ export const getWithFirstChildren = (id: number): Function => {
       }))
       .catch(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_FAILURE,
-        error: res
+        error: getWithFirstChildrenErrorAdapter(res)
       }))
   }
 }

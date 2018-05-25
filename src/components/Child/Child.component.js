@@ -9,13 +9,13 @@ import type {Likemark as LikemarkType} from 'models/likemark'
 // Components
 import { List, Icon, Image } from 'semantic-ui-react'
 import SmoothCollapse from 'react-smooth-collapse'
-import LikemarkDetails from 'components/likemark-details/likemark-details.component'
+import LikemarkDetails from 'components/Details/Details.component'
 
 // Services
 import {utils} from 'services'
 
 // Assets
-import './likemark-child.scss'
+import './Child.scss'
 
 // Main component
 /**
