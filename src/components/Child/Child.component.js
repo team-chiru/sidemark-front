@@ -46,7 +46,7 @@ export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetails
         <div className='likemark-child-content likemark-child-menu' onClick={handleLikemarkClick}>
           <div className='likemark-child-header'>
             <Image avatar src={utils.iconGeneratorByURL(likemarkChild.url)} />
-            <h3 className='header'>{likemarkChild.name}</h3>
+            <h3 className='header'>{likemarkChild.title}</h3>
           </div>
           <SmoothCollapse expanded={expandedDetails}>
             <LikemarkDetails likemark={likemarkChild} />
@@ -57,7 +57,7 @@ export const LikemarkChild = ({handleLikemarkClick, likemarkChild, toggleDetails
             name='ellipsis vertical'
             size='large'
             className='likemark-child-icon'
-            onClick={() => console.log(likemarkChild.name + ' options')}
+            onClick={() => console.log(likemarkChild.title + ' options')}
           />
         </div>
       </List.Content>

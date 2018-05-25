@@ -3,15 +3,17 @@
 // See https://github.com/erikras/ducks-modular-redux
 
 // Dependencies
-import {xhr, END_POINTS} from 'services/xhr';
-import {getWithFirstChildrenPayloadAdapter, getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
+import axios from 'axios'
+
+// Dependencies
+import {getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
 
 // Models
 import type {Action as ActionType} from 'models/action'
 import type {Likemark as LikemarkType} from 'models/likemark'
 
-// End-points
-const GET_WITH_FIRST_CHILDREN = END_POINTS.API_GET_WITH_FIRST_CHILDREN
+// Configs
+const baseUrl = 'http://localhost:42506/likemark/getWithFirstChildren/'
 
 /**
  * Actions which manage the request from getWithFirstChildren action creator.
@@ -26,7 +28,7 @@ const GET_WITH_FIRST_CHILDREN_FAILURE = 'likemark/children/GET_WITH_FIRST_CHILDR
  */
 const initialState: LikemarkType = {
   id: 0,
-  name: 'Root',
+  title: 'Root',
   url: 'http://likemark.io/',
   parentId: -1,
   children: []
@@ -59,13 +61,12 @@ export default (state: LikemarkType = initialState, action: ActionType) => {
  * @returns {object} The GET_WITH_FIRST_CHILDREN action which is a GET request for a likemark.
  */
 export const getWithFirstChildren = (id: number): Function => {
-  const request = xhr.get(GET_WITH_FIRST_CHILDREN, id.toString());
-
+  const request = axios.get(baseUrl + (id === 0 ? 'root' : id))
   return (dispatch: Function) => {
     request
       .then(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_SUCCESS,
-        payload: getWithFirstChildrenPayloadAdapter(res)
+        payload: urlParser(res.data.message)
       }))
       .catch(res => dispatch({
         type: GET_WITH_FIRST_CHILDREN_FAILURE,
@@ -73,3 +74,5 @@ export const getWithFirstChildren = (id: number): Function => {
       }))
   }
 }
+
+const urlParser = (likemark) => likemark && likemark.url ? likemark : {...likemark, url: 'http://likemark.io/'}

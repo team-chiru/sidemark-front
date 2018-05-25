@@ -1,7 +1,7 @@
 /* @flow */
 
 // Dependencies
-import axios from "axios";
+import axios from 'axios'
 
 // Configs
 const baseUrl = 'http://localhost:42506/'
@@ -9,14 +9,14 @@ const baseUrl = 'http://localhost:42506/'
 // End-Points
 export const END_POINTS = {
   API_GET_WITH_FIRST_CHILDREN: baseUrl + 'likemark/getWithFirstChildren/'
-};
+}
 
 // Http verbs
 const VERBS = {
   GET: 'get',
   POST: 'post',
   PUT: 'put'
-};
+}
 
 class Xhr {
     /**
