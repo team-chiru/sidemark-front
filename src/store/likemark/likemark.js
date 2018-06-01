@@ -9,8 +9,8 @@ import axios from 'axios'
 import {getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
 
 // Models
-import type {Action as ActionType} from 'models/action'
-import type {Likemark as LikemarkType} from 'models/likemark'
+import type { Action as ActionType } from 'models/action'
+import type { Likemark as LikemarkType } from 'models/likemark'
 
 // Configs
 const baseUrl = 'http://localhost:42506/likemark'
@@ -98,7 +98,7 @@ export const getWithFirstChildren = (id: number): Function => {
  * @param {object} Likemark - The likemark that will be add.
  * @returns {object} The POST_LIKEMARK action which is a POST request for creating a likemark.
  */
-export const postLikemark = (likemark: Likemark): Function => {
+export const postLikemark = (likemark: LikemarkType): Function => {
   const request = axios.post(baseUrl + '/post', likemark)
   return (dispatch: Function) => {
     request
