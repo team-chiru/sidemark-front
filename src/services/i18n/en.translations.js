@@ -6,12 +6,12 @@ const englishTranslations = {
         add: 'Add',
         settings: 'Settings',
         language: 'Language'
+      },
+      addForm: {
+        title: 'Add a likemark'
       }
     }
   }
-};
+}
 
 export default englishTranslations
-
-
-

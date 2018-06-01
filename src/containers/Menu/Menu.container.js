@@ -41,10 +41,9 @@ export class LikemarkMenu extends React.Component<Props, State> {
         menuVisibility: this.state.menuVisibility,
         toggleMenuVisibility: this.toggleMenuVisibility.bind(this),
         translationObject: I18n.t('likemark.likemarkMenu')
-      }}/>
+      }} />
     )
   }
-
 }
 
 export default connect(
