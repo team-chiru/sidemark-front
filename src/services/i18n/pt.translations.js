@@ -9,6 +9,6 @@ const portugueseTranslations = {
       }
     }
   }
-};
+}
 
 export default portugueseTranslations

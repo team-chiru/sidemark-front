@@ -29,19 +29,19 @@ export class Settings extends React.Component<Props, void> {
   render () {
     return (
       <div id='settings-page'>
-      {console.log(this.props)}
+        {console.log(this.props)}
         <div>
           <h2>Settings</h2>
         </div>
         <div>
           <Dropdown
-              placeholder={I18n.t('likemark.likemarkMenu.language')}
-              fluid
-              search
-              selection
-              options={languageOptions}
-              onChange={(e, data) => this.props.setLocale(data.value)}
-            />
+            placeholder={I18n.t('likemark.likemarkMenu.language')}
+            fluid
+            search
+            selection
+            options={languageOptions}
+            onChange={(e, data) => this.props.setLocale(data.value)}
+          />
         </div>
       </div>
     )

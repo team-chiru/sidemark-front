@@ -9,8 +9,6 @@ const spanishTranslations = {
       }
     }
   }
-};
+}
 
 export default spanishTranslations
-
-
