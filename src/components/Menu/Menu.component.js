@@ -24,14 +24,14 @@ const LikemarkMenu = ({children, menuVisibility, translationObject}: Props) => {
   return (
     <Sidebar.Pushable as={Segment}>
       <div className='likemark-menu'>
-        <Sidebar as={Menu} animation='push' direction='top' visible={true} inverted>
+        <Sidebar as={Menu} animation='push' direction='top' visible inverted>
           <Menu.Item name='home'>
             <Icon name='home' />
             {translationObject.home}
           </Menu.Item>
           <Menu.Item name='add'>
             <Icon name='add' />
-             {translationObject.add}
+            {translationObject.add}
           </Menu.Item>
           <Menu.Item name='settings'>
             <Icon name='settings' />

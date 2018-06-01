@@ -8,7 +8,8 @@ const baseUrl = 'http://localhost:42506/'
 
 // End-Points
 export const END_POINTS = {
-  API_GET_WITH_FIRST_CHILDREN: baseUrl + 'likemark/getWithFirstChildren/'
+  API_GET_WITH_FIRST_CHILDREN: baseUrl + 'likemark/getWithFirstChildren/',
+  API_POST_CREATE_LIKEMARK: baseUrl + 'likemark/post'
 }
 
 // Http verbs
@@ -26,9 +27,9 @@ class Xhr {
    */
   urlParser (path: string, parameter: any) {
     if (parameter && path.indexOf(':') === -1) {
-      throw new Error(`No placeholder found in path for path: ${path} parameter: ${parameter}`);
+      throw new Error(`No placeholder found in path for path: ${path} parameter: ${parameter}`)
     }
-    return path.concat(parameter ? parameter : '');
+    return path.concat(parameter || '')
   }
 
   /**
@@ -37,7 +38,7 @@ class Xhr {
    * @param {any} url - url to reach
    * @returns {payload} - possible data to use on some requests
    */
-  request = (method: string, url: string, payload: ?Object) => axios({ method, url, data: payload})
+  request = (method: string, url: string, payload: ?Object) => axios({ method, url, data: payload })
 
   /**
    *
@@ -65,6 +66,6 @@ class Xhr {
   put = (path: string, parameter: any, data: Object) => this.request(VERBS.PUT, this.urlParser(path, parameter), data)
 }
 
-export const xhr = new Xhr();
+export const xhr = new Xhr()
 
-export default xhr;
+export default xhr
