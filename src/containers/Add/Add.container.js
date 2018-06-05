@@ -11,15 +11,17 @@ import { ReduxAddForm } from '../../components/Add/AddForm-Redux/AddForm-redux.c
 import type {Action as ActionType} from 'models/action'
 
 // Action Creators
-import { postLikemark } from 'store/likemark/likemark'
+import { getWithFirstChildren, postLikemark } from 'store/likemark/likemark'
 
 // Main Component
 type Props = {
+  currentLikemark: Object,
   children?: React.Node,
   translationObject: any,
   setLocale: Function,
   history?: Object,
   postLikemark: (likemark: Object) => ActionType,
+  getWithFirstChildren: (likemarkId: number) => ActionType
 }
 
 type State = {
@@ -32,6 +34,7 @@ export class Add extends React.Component<Props, State> {
     this.state = {
       addVisibility: false
     }
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   toggleAddFormVisibility (): void {
@@ -40,9 +43,9 @@ export class Add extends React.Component<Props, State> {
 
   onSubmit (values): void {
     console.log(values)
-    // TODO : Take current Likemark id for new likemark parentId
+    const { id } = this.props.currentLikemark
     const newLikemark = {
-      parentId: 'e0ddda7d-d78b-43f4-a509-f5bade835964', // will be dynamic
+      parentId: id, // will be dynamic
       title: values.title,
       url: values.url
     }

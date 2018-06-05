@@ -73,7 +73,9 @@ export class Likemark extends React.Component<Props, State> {
           setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
         />
         {/* TODO: Make Add a window */}
-        <Add />
+        <Add
+          currentLikemark={this.props.likemark}
+        />
       </div>
     )
   }

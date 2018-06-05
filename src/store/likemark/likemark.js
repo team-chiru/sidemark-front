@@ -6,11 +6,7 @@
 import axios from 'axios'
 
 // Dependencies
-import {getWithFirstChildrenErrorAdapter} from './likemark.adapter.js'
-
-// Models
-import type { Action as ActionType } from 'models/action'
-import type { Likemark as LikemarkType } from 'models/likemark'
+import {getWithFirstChildrenErrorAdapter, postLikemarkErrorAdapter} from './likemark.adapter.js'
 
 // Configs
 const baseUrl = 'http://localhost:42506/likemark'
@@ -108,7 +104,7 @@ export const postLikemark = (likemark: Object): Function => {
       }))
       .catch(res => dispatch({
         type: POST_LIKEMARK_FAILURE,
-        error: getWithFirstChildrenErrorAdapter(res)
+        error: postLikemarkErrorAdapter(res)
       }))
   }
 }
