@@ -137,6 +137,7 @@
   "devDependencies": {
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "redux-form": "^7.3.0"
   }
 }

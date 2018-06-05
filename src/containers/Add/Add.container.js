@@ -5,11 +5,12 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {I18n, setLocale} from 'react-redux-i18n'
+import { ReduxAddForm } from '../../components/Add/AddForm-Redux/AddForm-redux.component'
 
 // Main Component
 type Props = {
   children?: React.Node,
-  translationObject: Object,
+  translationObject: any,
   setLocale: Function,
   history?: Object
 }
@@ -18,7 +19,7 @@ type State = {
   addVisibility: boolean
 }
 
-export class AddForm extends React.Component<Props, State> {
+export class Add extends React.Component<Props, State> {
   constructor (props: Props, context: any) {
     super(props, context)
     this.state = {
@@ -33,9 +34,7 @@ export class AddForm extends React.Component<Props, State> {
   render () {
     console.log('Add Likemark: ', I18n.t('likemark.addForm'))
     return (
-      <div>
-        <h1>{this.props.translationObject.title}</h1>
-      </div>
+      <ReduxAddForm />
     )
   }
 }
@@ -43,4 +42,4 @@ export class AddForm extends React.Component<Props, State> {
 export default connect(
   null,
   dispatch => bindActionCreators({ setLocale }, dispatch)
-)(AddForm)
+)(Add)

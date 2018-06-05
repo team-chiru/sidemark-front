@@ -14,6 +14,7 @@ import {I18n, setLocale} from 'react-redux-i18n'
 
 // Components
 import LikemarkUI from 'components/Likemark/Likemark.component'
+import { Add } from '../Add/Add.container'
 
 // Models
 import type {Action as ActionType} from 'models/action'
@@ -63,13 +64,15 @@ export class Likemark extends React.Component<Props, State> {
 
   render () {
     return (
-      <LikemarkUI
-        likemark={this.props.likemark}
-        translationObject={I18n.t('likemark')}
-        handleLikemarkClick={this.handleLikemarkClick.bind(this)}
-        toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
-        setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
-      />
+      <div>
+        <LikemarkUI
+          likemark={this.props.likemark}
+          translationObject={I18n.t('likemark')}
+          handleLikemarkClick={this.handleLikemarkClick.bind(this)}
+          toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
+          setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
+        />
+      </div>
     )
   }
 }
