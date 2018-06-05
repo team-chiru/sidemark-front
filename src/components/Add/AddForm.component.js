@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field } from 'redux-form'
 
 export const AddForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
@@ -34,7 +34,3 @@ export const AddForm = props => {
     </form>
   )
 }
-
-// export default reduxForm({
-//   form: 'AddForm' // a unique identifier for this form
-// })(AddForm)

@@ -72,6 +72,8 @@ export class Likemark extends React.Component<Props, State> {
           toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
           setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
         />
+        {/* TODO: Make Add a window */}
+        <Add />
       </div>
     )
   }

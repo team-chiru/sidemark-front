@@ -98,7 +98,7 @@ export const getWithFirstChildren = (id: number): Function => {
  * @param {object} Likemark - The likemark that will be add.
  * @returns {object} The POST_LIKEMARK action which is a POST request for creating a likemark.
  */
-export const postLikemark = (likemark: LikemarkType): Function => {
+export const postLikemark = (likemark: Object): Function => {
   const request = axios.post(baseUrl + '/post', likemark)
   return (dispatch: Function) => {
     request
