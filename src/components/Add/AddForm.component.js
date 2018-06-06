@@ -1,10 +1,14 @@
 import React from 'react'
 import { Field } from 'redux-form'
 
+// Assets
+import './Add.scss'
+
 export const AddForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, closeAddModal, pristine, reset, submitting, valid } = props
   return (
     <form onSubmit={handleSubmit} className='ui form'>
+      <h1 class='ui header'>Add Likemark</h1>
       <div>
         <label>Title</label>
         <div>
@@ -16,6 +20,9 @@ export const AddForm = props => {
           />
         </div>
       </div>
+
+      <div className='form-item-separator' />
+
       <div>
         <label>URL</label>
         <div>
@@ -27,10 +34,14 @@ export const AddForm = props => {
           />
         </div>
       </div>
-      <button type='submit' disabled={pristine || submitting}>Submit</button>
-      <button type='button' disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-      </button>
+
+      <div className='form-item-separator' />
+
+      <div className='add-button-group'>
+        <button type='submit' className='ui primary button' disabled={!valid}>Submit</button>
+        <button type='button' className='ui secondary button' onClick={closeAddModal}>Cancel</button>
+        <button type='button' className='ui button' disabled={pristine || submitting} onClick={reset}>Clear</button>
+      </div>
     </form>
   )
 }

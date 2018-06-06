@@ -14,7 +14,6 @@ import {I18n, setLocale} from 'react-redux-i18n'
 
 // Components
 import LikemarkUI from 'components/Likemark/Likemark.component'
-import { Add } from '../Add/Add.container'
 
 // Models
 import type {Action as ActionType} from 'models/action'
@@ -37,14 +36,16 @@ type Props = {
 }
 
 type State = {
-  menuVisibility: boolean
+  menuVisibility: boolean,
+  addModalIsOpen: boolean
 }
 
 export class Likemark extends React.Component<Props, State> {
   constructor (props: Props, context: any) {
     super(props, context)
     this.state = {
-      menuVisibility: false
+      menuVisibility: false,
+      addModalIsOpen: false
     }
   }
 
@@ -71,10 +72,6 @@ export class Likemark extends React.Component<Props, State> {
           handleLikemarkClick={this.handleLikemarkClick.bind(this)}
           toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
           setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
-        />
-        {/* TODO: Make Add a window */}
-        <Add
-          currentLikemark={this.props.likemark}
         />
       </div>
     )

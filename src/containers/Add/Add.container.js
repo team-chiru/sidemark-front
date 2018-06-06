@@ -11,7 +11,7 @@ import { ReduxAddForm } from '../../components/Add/AddForm-Redux/AddForm-redux.c
 import type {Action as ActionType} from 'models/action'
 
 // Action Creators
-import { getWithFirstChildren, postLikemark } from 'store/likemark/likemark'
+import { postLikemark } from 'store/likemark/likemark'
 
 // Main Component
 type Props = {
@@ -20,8 +20,9 @@ type Props = {
   translationObject: any,
   setLocale: Function,
   history?: Object,
-  postLikemark: (likemark: Object) => ActionType,
-  getWithFirstChildren: (likemarkId: number) => ActionType
+  onSubmit: Function,
+  closeAddModal: Function,
+  postLikemark: (likemark: Object) => ActionType
 }
 
 type State = {
@@ -34,31 +35,34 @@ export class Add extends React.Component<Props, State> {
     this.state = {
       addVisibility: false
     }
-    this.onSubmit = this.onSubmit.bind(this)
   }
 
   toggleAddFormVisibility (): void {
     this.setState({ addVisibility: !this.state.addVisibility })
   }
 
-  onSubmit (values): void {
-    console.log(values)
-    const { id } = this.props.currentLikemark
-    const newLikemark = {
-      parentId: id, // will be dynamic
-      title: values.title,
-      url: values.url
+  onSubmit (values: Object): void {
+    if (this.props.currentLikemark && values.title && values.url) {
+      const { id } = this.props.currentLikemark
+      const newLikemark = {
+        parentId: id,
+        title: values.title,
+        url: values.url
+      }
+      // Insert new Likemark into database.
+      postLikemark(newLikemark)
+      // TODO: Make refresh after creation
+    } else {
+      console.log('Likemark do not exist or trying to create a likemark with empty values')
     }
-    // Insert new Likemark into database.
-    postLikemark(newLikemark)
-    // TODO: Make refresh after creation
   }
 
   render () {
     console.log('Add Likemark: ', I18n.t('likemark.addForm'))
     return (
       <ReduxAddForm
-        onSubmit={this.onSubmit}
+        onSubmit={this.onSubmit.bind(this)}
+        closeAddModal={this.props.closeAddModal}
       />
     )
   }

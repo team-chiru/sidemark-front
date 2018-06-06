@@ -17,10 +17,11 @@ import './Menu.scss'
 type Props = {
   children?: React.Node,
   menuVisibility: boolean,
-  translationObject: Object
+  translationObject: Object,
+  openAddModal: Function
 }
 
-const LikemarkMenu = ({children, menuVisibility, translationObject}: Props) => {
+const LikemarkMenu = ({children, menuVisibility, translationObject, openAddModal}: Props) => {
   return (
     <Sidebar.Pushable as={Segment}>
       <div className='likemark-menu'>
@@ -29,7 +30,7 @@ const LikemarkMenu = ({children, menuVisibility, translationObject}: Props) => {
             <Icon name='home' />
             {translationObject.home}
           </Menu.Item>
-          <Menu.Item name='add'>
+          <Menu.Item name='add' onClick={openAddModal}>
             <Icon name='add' />
             {translationObject.add}
           </Menu.Item>

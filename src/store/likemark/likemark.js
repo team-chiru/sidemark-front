@@ -8,6 +8,10 @@ import axios from 'axios'
 // Dependencies
 import {getWithFirstChildrenErrorAdapter, postLikemarkErrorAdapter} from './likemark.adapter.js'
 
+// Models
+import type { Action as ActionType } from 'models/action'
+import type { Likemark as LikemarkType } from 'models/likemark'
+
 // Configs
 const baseUrl = 'http://localhost:42506/likemark'
 
