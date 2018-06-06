@@ -8,7 +8,7 @@ export const AddForm = props => {
   const { handleSubmit, closeAddModal, pristine, reset, submitting, valid } = props
   return (
     <form onSubmit={handleSubmit} className='ui form'>
-      <h1 class='ui header'>Add Likemark</h1>
+      <h1 className='ui header'>Add Likemark</h1>
       <div>
         <label>Title</label>
         <div>
