@@ -33,7 +33,7 @@
         {
             "name": "Debug Sidemark Frontend",
             "configurations": [
-                "Debug JS from Chrome"
+                "Debug from Chrome"
             ]
         }
     ]

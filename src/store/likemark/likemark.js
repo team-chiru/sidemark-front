@@ -13,7 +13,7 @@ import type { Action as ActionType } from 'models/action'
 import type { Likemark as LikemarkType } from 'models/likemark'
 
 // Configs
-const baseUrl = 'http://localhost:42506/likemark'
+const baseUrl = 'http://localhost:8000/likemark'
 
 /**
  * Actions which manage the request from getWithFirstChildren action creator.

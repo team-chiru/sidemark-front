@@ -4,7 +4,7 @@
 import axios from 'axios'
 
 // Configs
-const baseUrl = 'http://localhost:42506/'
+const baseUrl = 'http://localhost:8000'
 
 // End-Points
 export const END_POINTS = {
