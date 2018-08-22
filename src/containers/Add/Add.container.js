@@ -11,18 +11,21 @@ import { ReduxAddForm } from '../../components/Add/AddForm-Redux/AddForm-redux.c
 import type {Action as ActionType} from 'models/action'
 
 // Action Creators
-import { postLikemark } from 'store/likemark/likemark'
+import { postAndFetchLikemark } from 'store/likemark/likemark'
+
+// Models
+import type {Likemark as LikemarkType} from 'models/likemark'
 
 // Main Component
 type Props = {
-  currentLikemark: Object,
+  currentLikemark: LikemarkType,
   children?: React.Node,
   translationObject: any,
   setLocale: Function,
   history?: Object,
   onSubmit: Function,
   closeAddModal: Function,
-  postLikemark: (likemark: Object) => ActionType
+  postAndFetchLikemark: (likemark: LikemarkType, id: number) => ActionType,
 }
 
 type State = {
@@ -42,16 +45,20 @@ export class Add extends React.Component<Props, State> {
   }
 
   onSubmit (values: Object): void {
-    if (this.props.currentLikemark && values.title && values.url) {
-      const { id } = this.props.currentLikemark
-      const newLikemark = {
-        parentId: id,
+    const { closeAddModal, currentLikemark, postAndFetchLikemark } = this.props
+
+    if (currentLikemark && values.title && values.url) {
+      const newLikemark: LikemarkType = {
+        id: -1,
+        parentId: currentLikemark.id,
         title: values.title,
-        url: values.url
+        url: values.url,
+        children: []
       }
+
       // Insert new Likemark into database.
-      postLikemark(newLikemark)
-      // TODO: Make refresh after creation
+      closeAddModal()
+      postAndFetchLikemark(newLikemark, currentLikemark.id)
     } else {
       console.log('Likemark do not exist or trying to create a likemark with empty values')
     }
@@ -70,5 +77,5 @@ export class Add extends React.Component<Props, State> {
 
 export default connect(
   null,
-  dispatch => bindActionCreators({ setLocale }, dispatch)
+  dispatch => bindActionCreators({ postAndFetchLikemark, setLocale }, dispatch)
 )(Add)
