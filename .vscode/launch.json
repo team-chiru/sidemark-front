@@ -5,9 +5,9 @@
             "type": "chrome",
             "request": "launch",
             "name": "Debug from Chrome",
-            "url": "http://localhost:8080/index.html",
+            "url": "http://localhost:3000",
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceFolder:sidemark-front}"
         },
         {
             "name": "Launch from Chrome",
@@ -33,7 +33,7 @@
         {
             "name": "Debug Sidemark Frontend",
             "configurations": [
-                "Debug JS from Chrome"
+                "Debug from Chrome"
             ]
         }
     ]

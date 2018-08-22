@@ -36,14 +36,16 @@ type Props = {
 }
 
 type State = {
-  menuVisibility: boolean
+  menuVisibility: boolean,
+  addModalIsOpen: boolean
 }
 
 export class Likemark extends React.Component<Props, State> {
   constructor (props: Props, context: any) {
     super(props, context)
     this.state = {
-      menuVisibility: false
+      menuVisibility: false,
+      addModalIsOpen: false
     }
   }
 
@@ -63,13 +65,15 @@ export class Likemark extends React.Component<Props, State> {
 
   render () {
     return (
-      <LikemarkUI
-        likemark={this.props.likemark}
-        translationObject={I18n.t('likemark')}
-        handleLikemarkClick={this.handleLikemarkClick.bind(this)}
-        toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
-        setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
-      />
+      <div>
+        <LikemarkUI
+          likemark={this.props.likemark}
+          translationObject={I18n.t('likemark')}
+          handleLikemarkClick={this.handleLikemarkClick.bind(this)}
+          toggleMenuVisibility={this.toggleMenuVisibility.bind(this)}
+          setMenuVisibility={(menuVisibility) => this.setState({menuVisibility})}
+        />
+      </div>
     )
   }
 }

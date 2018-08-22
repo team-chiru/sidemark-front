@@ -9,10 +9,6 @@ const frenchTranslations = {
       }
     }
   }
-};
+}
 
 export default frenchTranslations
-
-
-
-
